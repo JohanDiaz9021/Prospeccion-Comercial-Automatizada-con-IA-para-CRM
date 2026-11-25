@@ -1,0 +1,50 @@
+meta {
+  name: Probar calificación
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/qualification/preview
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "scoreThreshold": null,
+    "contacts": [
+      {
+        "title": "Director de Tecnología",
+        "organizationName": "Clínica Ficticia del Norte",
+        "personLocations": ["Bogota, Colombia"],
+        "industries": ["hospital & health care"],
+        "employeeRanges": ["201,500"],
+        "signals": ["La empresa usa SAP"]
+      },
+      {
+        "title": "Director Creativo",
+        "organizationName": "Agencia Ficticia Creativa",
+        "personLocations": ["Bogota, Colombia"],
+        "industries": ["marketing & advertising"],
+        "employeeRanges": ["11,50"]
+      }
+    ]
+  }
+}
+
+tests {
+  test("responde 200, 400 o 502", function () {
+    expect([200, 400, 502]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Tarea 3.5. Califica hasta 10 contactos escritos a mano y no guarda nada. SOLO DATOS INVENTADOS:
+  con la capa gratuita de Gemini, Google puede usar lo que se envía.
+  - profileOfInterest (opcional): perfil a probar sin guardarlo. Si no viene, usa el de la configuración vigente.
+  - scoreThreshold (opcional): umbral a probar. Si no viene, el del tenant (o 60).
+  - Respuesta: por contacto score, category, criteria, penalty, reason, missingData, qualified, model y
+    promptVersion; o error (BLOCKED, INVALID_RESPONSE) sin puntaje.
+  - 400 lblProfileMissing: el tenant no tiene perfil. 502: Gemini no respondió (llave o cuota).
+}

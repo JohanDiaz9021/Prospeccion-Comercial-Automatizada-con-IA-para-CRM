@@ -1,0 +1,26 @@
+meta {
+  name: Header de tenant distinto al token
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/api/config
+  body: none
+  auth: inherit
+}
+
+headers {
+  X-Tenant-Database-Code: otro_tenant
+}
+
+tests {
+  test("responde 403 o 200 o 501", function () {
+    expect([403, 200, 501]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Directo al servicio: 403 `lblTenantNotAllowed` (el header no coincide con db_code).
+  Por el gateway: el gateway reemplaza el header con el del token, así que pasa (501 hoy).
+}

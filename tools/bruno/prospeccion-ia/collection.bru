@@ -1,0 +1,23 @@
+auth {
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  # Prospeccion IA (msa-prospeccion-crm)
+
+  Llamadas de ejemplo para probar el servicio a mano (tarea 2.12). Solo desarrollo y datos de prueba.
+
+  - **token**: JWT de prueba. Se genera con `python tools/token-local/generar_token.py | Set-Clipboard`
+    y se pega en la variable secreta `token` del entorno. Vence en 60 minutos.
+  - **apolloApiKey, hunterApiKey, geminiApiKey**: llaves de los planes gratis, solo para la carpeta
+    "90 Proveedores externos". Son variables secretas: Bruno las guarda en el equipo, nunca en estos archivos.
+  - Entorno **local**: directo al servicio (puerto 8099). Entorno **local-gateway**: a través de
+    msa-apigateway-crm (puerto 8090), como lo hará el frontend del CRM.
+
+  Mientras un servicio esté en TODO, su endpoint responde 501 `lblNotImplemented`: la llamada sirve para
+  confirmar que la ruta, la seguridad y el tenant funcionan.
+}

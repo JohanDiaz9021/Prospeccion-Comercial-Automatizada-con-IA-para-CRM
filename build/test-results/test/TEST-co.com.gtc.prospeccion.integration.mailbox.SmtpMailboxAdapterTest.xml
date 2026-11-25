@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapterTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:48.146Z" hostname="DESKTOP-4TARBHR" time="0.37">
+  <properties/>
+  <testcase name="soloSonLocalesLocalhostLoopbackYLosNombresDeMailpit()" classname="co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapterTest" time="0.013"/>
+  <testcase name="leeDeMailpitSoloLoQueLlegoAlBuzonDesdeLaFecha()" classname="co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapterTest" time="0.233"/>
+  <testcase name="unaDireccionRechazadaEsPermanenteYUnServidorCaidoEsTemporal()" classname="co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapterTest" time="0.055"/>
+  <testcase name="enviaPorSmtpConNuestrosEncabezados()" classname="co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapterTest" time="0.028"/>
+  <testcase name="porSeguridadNoArrancaConUnServidorQueNoEsLocal()" classname="co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapterTest" time="0.022"/>
+  <testcase name="sinApiDeMailpitNoHayBuzonQueLeer()" classname="co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapterTest" time="0.006"/>
+  <testcase name="conPermisoExplicitoAceptaOtroServidor()" classname="co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapterTest" time="0.008"/>
+  <system-out><![CDATA[08:56:48.307 [Test worker] INFO co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapter -- Buzón SMTP: localhost:1025, lectura por la API de Mailpit
+08:56:48.404 [Test worker] INFO co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapter -- Buzón SMTP: 127.0.0.1:57700 (sin lectura del buzón)
+08:56:48.444 [Test worker] INFO co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapter -- Buzón SMTP: 127.0.0.1:57702 (sin lectura del buzón)
+08:56:48.457 [Test worker] INFO co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapter -- Buzón SMTP: 127.0.0.1:57704 (sin lectura del buzón)
+08:56:48.507 [Test worker] INFO co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapter -- Buzón SMTP: localhost:1025 (sin lectura del buzón)
+08:56:48.516 [Test worker] INFO co.com.gtc.prospeccion.integration.mailbox.SmtpMailboxAdapter -- Buzón SMTP: smtp.office365.com:587 (sin lectura del buzón)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

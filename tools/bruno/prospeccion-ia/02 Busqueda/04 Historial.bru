@@ -1,0 +1,26 @@
+meta {
+  name: Historial de búsquedas
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/search/runs?page=0&size=20
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 0
+  size: 20
+}
+
+tests {
+  test("responde 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+}
+
+docs {
+  La más reciente primero, con el embudo y los resultados por tipo de cada búsqueda.
+}

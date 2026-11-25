@@ -1,0 +1,63 @@
+# Perfil local: MySQL del docker-compose.local.yml, sin Eureka, sin SSM y sin jobs.
+spring:
+  config:
+    # Lee el .env de la raíz del proyecto (copia de .env.example). Si no existe, se ignora.
+    import: optional:file:.env[.properties]
+  # Para probar llamadas Feign sin Eureka, descomentar y apuntar al servicio levantado en local:
+  # cloud:
+  #   discovery:
+  #     client:
+  #       simple:
+  #         instances:
+  #           msa-cotizaciones:
+  #             - uri: ${CRM_COTIZACIONES_URL}
+
+eureka:
+  client:
+    # Apagado para correr solo. Con el CRM completo en local (gateway + Eureka): EUREKA_CLIENT_ENABLED=true.
+    enabled: ${EUREKA_CLIENT_ENABLED:false}
+
+prospeccion:
+  tenants-enabled: ${LOCAL_TENANT_CODE}
+  # En local el tenant sale de variables de entorno en lugar de AWS SSM.
+  local-tenant:
+    enabled: true
+    code: ${LOCAL_TENANT_CODE}
+    url: jdbc:mysql://localhost:${MYSQL_HOST_PORT}/${MYSQL_DATABASE}?serverTimezone=UTC
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
+  # 2.9: el token local (tools/token-local) trae el rol ADMINISTRADOR. COMERCIAL sirve para probar un rol limitado:
+  #   python tools/token-local/generar_token.py --roles COMERCIAL
+  security:
+    operations-by-role:
+      ADMINISTRADOR: [VER, EJECUTAR, APROBAR, CONFIGURAR]
+      COMERCIAL: [VER, APROBAR]
+  # Enlaces de baja (5.5): en local, un secreto inventado si el .env no trae UNSUBSCRIBE_TOKEN_SECRET.
+  unsubscribe:
+    token-secret: ${UNSUBSCRIBE_TOKEN_SECRET:secreto-local-de-prueba-para-enlaces-de-baja-0001}
+  # Envío (5.2) con Mailpit: con MAILBOX_PROVIDER=smtp en el .env, los correos van a Mailpit (localhost:1025) y se ven
+  # en http://localhost:8025. Mailpit nunca los entrega a nadie.
+  #   docker compose -f docker-compose.local.yml --profile correo up -d mailpit
+  mailbox:
+    from-address: ${MAILBOX_FROM_ADDRESS:prospeccion@gtc-prueba.local}
+    smtp:
+      host: ${SMTP_HOST:localhost}
+      mailpit-api-url: ${MAILPIT_API_URL:http://localhost:8025}
+  # Pie legal de prueba: los datos reales los entrega jurídica (1.10).
+  legal:
+    nit: ${LEGAL_NIT:000.000.000-0 (prueba)}
+    address: ${LEGAL_ADDRESS:Dirección de prueba, Bogotá}
+    privacy-policy-url: ${LEGAL_PRIVACY_POLICY_URL:https://www.example.com/politica-de-datos}
+  jobs:
+    scheduled-search:
+      enabled: false
+    send-dispatcher:
+      enabled: false
+    mailbox-sync:
+      enabled: false
+    maintenance:
+      enabled: false
+
+logging:
+  level:
+    co.com.gtc.prospeccion: DEBUG

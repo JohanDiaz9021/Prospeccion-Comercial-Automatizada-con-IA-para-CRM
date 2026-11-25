@@ -1,0 +1,111 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.13'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'co.com.gtc'
+version = '0.0.1-SNAPSHOT'
+description = 'Sueco CRM - Prospección IA (automatización de Leads)'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+ext {
+    set('springCloudVersion', '2023.0.6')
+    set('awsSdkVersion', '2.57.12')
+    set('mapstructVersion', '1.6.3')
+    set('lombokMapstructBindingVersion', '0.2.0')
+    set('springdocVersion', '2.6.0')
+    set('owaspHtmlSanitizerVersion', '20261107.1')
+    // El cliente de SSM del SDK de AWS (apache5-client) necesita httpclient5 5.4 o más (TlsSocketStrategy).
+    // Spring Boot 3.3 fija la 5.3.1 y cualquier lectura de SSM fallaba con NoClassDefFoundError.
+    set('httpclient5.version', '5.4.4')
+    set('httpcore5.version', '5.3.4')
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        mavenBom "software.amazon.awssdk:bom:${awsSdkVersion}"
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+    // Spring Boot
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    // Spring Cloud
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'org.springframework.cloud:spring-cloud-starter-loadbalancer'
+    implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j'
+
+    // AWS SSM (credenciales por tenant y llaves de proveedores)
+    implementation 'software.amazon.awssdk:ssm'
+
+    // OpenAPI / Swagger
+    implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springdocVersion}"
+
+    // Limpieza del HTML de los borradores
+    implementation "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer:${owaspHtmlSanitizerVersion}"
+
+    // Correo (5.2): armar y leer mensajes MIME (común a SMTP, Gmail y Graph) y enviar por SMTP (Mailpit en local)
+    implementation 'org.eclipse.angus:jakarta.mail'
+
+    // MapStruct + Lombok
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor "org.projectlombok:lombok-mapstruct-binding:${lombokMapstructBindingVersion}"
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+
+    // Base de datos
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // Pruebas
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    // Java 21, igual que los microservicios del CRM (toolchain 21 en msa-cotizaciones, params, security y gateway).
+    options.release = 21
+    options.compilerArgs += [
+        '-parameters',
+        '-Amapstruct.defaultComponentModel=spring'
+    ]
+}
+
+tasks.named('jar') {
+    enabled = false
+}
+
+tasks.named('bootJar') {
+    archiveFileName = "${project.name}.jar"
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

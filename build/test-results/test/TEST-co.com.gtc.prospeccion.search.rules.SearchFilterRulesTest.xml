@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.search.rules.SearchFilterRulesTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:49.344Z" hostname="DESKTOP-4TARBHR" time="0.008">
+  <properties/>
+  <testcase name="quitaVaciosRepetidosYValoresQueApolloNoConoce()" classname="co.com.gtc.prospeccion.search.rules.SearchFilterRulesTest" time="0.005"/>
+  <testcase name="armaLaPeticionDeApolloConPalabrasClaveYDominiosExcluidos()" classname="co.com.gtc.prospeccion.search.rules.SearchFilterRulesTest" time="0.001"/>
+  <testcase name="soloUbicacionOTamanoNoDiceAQuienBuscar()" classname="co.com.gtc.prospeccion.search.rules.SearchFilterRulesTest" time="0.0"/>
+  <testcase name="sinUbicacionSeBuscaEnColombia()" classname="co.com.gtc.prospeccion.search.rules.SearchFilterRulesTest" time="0.001"/>
+  <testcase name="lasListasDelPerfilQuedanEnMinusculasYSinWww()" classname="co.com.gtc.prospeccion.search.rules.SearchFilterRulesTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

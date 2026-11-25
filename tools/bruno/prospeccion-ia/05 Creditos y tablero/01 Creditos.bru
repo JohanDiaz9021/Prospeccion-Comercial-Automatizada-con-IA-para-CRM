@@ -1,0 +1,31 @@
+meta {
+  name: Créditos consumidos
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/credits
+  body: none
+  auth: inherit
+}
+
+tests {
+  test("responde 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test("trae Apollo y Hunter con estado", function () {
+    const proveedores = res.getBody().data.map(p => p.provider);
+    expect(proveedores).to.include.members(["APOLLO", "HUNTER"]);
+    res.getBody().data.forEach(p => expect(["OK", "WARNING", "EXCEEDED"]).to.include(p.status));
+  });
+}
+
+docs {
+  Tarea 4.2. Consumo del mes (hora de Colombia) por proveedor para el tenant del token:
+  - credits: gastado este mes; monthlyBudget y percentUsed: presupuesto y porcentaje (null = sin tope).
+  - perSearchRunLimit: tope por campaña. costUsd: costo estimado si se configuró el precio por crédito.
+  - providerRemaining: saldo de toda la cuenta según el proveedor (solo Hunter; null si no hay llave).
+  - status: OK, WARNING (80 % o saldo del proveedor menor que una campaña) o EXCEEDED.
+  Topes: APOLLO_MONTHLY_CREDITS, APOLLO_CREDITS_PER_SEARCH, HUNTER_MONTHLY_CREDITS, HUNTER_CREDITS_PER_SEARCH.
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Descartar
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/api/drafts/{{draftId}}/discard
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "reason": "No encaja con el perfil"
+  }
+}
+
+tests {
+  test("responde 200 o 400 o 404 o 501", function () {
+    expect([200, 400, 404, 501]).to.include(res.getStatus());
+  });
+}

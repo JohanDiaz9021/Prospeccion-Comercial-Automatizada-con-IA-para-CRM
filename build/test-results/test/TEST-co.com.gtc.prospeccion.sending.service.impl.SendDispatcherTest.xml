@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:50.613Z" hostname="DESKTOP-4TARBHR" time="0.049">
+  <properties/>
+  <testcase name="sinCupoDiarioParaAntesDeTomarNada()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.004"/>
+  <testcase name="conElEspaciadoCumplidoEnvia()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.004"/>
+  <testcase name="enviaYDejaElCorreoEnviadoConSuEvento()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.004"/>
+  <testcase name="sinPieLegalNoTocaLaCola()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.002"/>
+  <testcase name="sinTurnosNoHaceNada()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.002"/>
+  <testcase name="elDominioDelMessageIdEsElDelBuzon()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.001"/>
+  <testcase name="unCorreoQueNoSePuedeArmarFallaSinLlegarAlBuzon()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.002"/>
+  <testcase name="unErrorPermanenteNoSeReintenta()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.002"/>
+  <testcase name="forzadoNoEsperaTurnoNiEspaciadoPeroRespetaElTope()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.005"/>
+  <testcase name="siElBorradorYaNoEstaAprobadoSeCancela()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.001"/>
+  <testcase name="siElUltimoSalioHacePocoEsperaElEspaciado()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.001"/>
+  <testcase name="siElProveedorNoDaIdQuedaElMessageId()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.002"/>
+  <testcase name="unErrorTemporalSeReintentaMasTarde()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.002"/>
+  <testcase name="siElContactoSeDioDeBajaSeCancelaSinEnviar()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.002"/>
+  <testcase name="unaDireccionRechazadaNoFrenaALosDemas()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.003"/>
+  <testcase name="conGmailOGraphSinBuzonEnLaConfiguracionNoEnvia()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.002"/>
+  <testcase name="forzadoConElBuzonCaidoNoGastaTodosLosIntentosDeUnaVez()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.002"/>
+  <testcase name="elUltimoIntentoQuedaFallido()" classname="co.com.gtc.prospeccion.sending.service.impl.SendDispatcherTest" time="0.002"/>
+  <system-out><![CDATA[08:56:50.623 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Correo enviado: envío 42, borrador 7
+08:56:50.623 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío: 1 enviados, 0 para reintentar, 0 fallidos, 0 cancelados. Paró por: No hay más correos con turno
+08:56:50.627 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Correo enviado: envío 42, borrador 7
+08:56:50.627 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío: 1 enviados, 0 para reintentar, 0 fallidos, 0 cancelados. Paró por: Espaciado entre correos
+08:56:50.630 [Test worker] WARN co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- No se envía nada. Falta el NIT del pie legal (LEGAL_NIT, tarea 1.10)
+08:56:50.637 [Test worker] WARN co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío 42 fallido (1 de 3 intentos, error permanente): no se pudo armar el correo: {{nombre}}
+08:56:50.638 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío: 0 enviados, 0 para reintentar, 1 fallidos, 0 cancelados. Paró por: No hay más correos con turno
+08:56:50.639 [Test worker] WARN co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío 42 fallido (1 de 3 intentos, error permanente): Dirección rechazada <<correo>>
+08:56:50.639 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío: 0 enviados, 0 para reintentar, 1 fallidos, 0 cancelados. Paró por: No hay más correos con turno
+08:56:50.641 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Correo enviado: envío 42, borrador 7
+08:56:50.642 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Correo enviado: envío 42, borrador 7
+08:56:50.642 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío: 2 enviados, 0 para reintentar, 0 fallidos, 0 cancelados. Paró por: Tope de 2 correos por pasada
+08:56:50.646 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío 42 cancelado: el borrador ya no está aprobado
+08:56:50.646 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío: 0 enviados, 0 para reintentar, 0 fallidos, 1 cancelados. Paró por: No hay más correos con turno
+08:56:50.650 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Correo enviado: envío 42, borrador 7
+08:56:50.650 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío: 1 enviados, 0 para reintentar, 0 fallidos, 0 cancelados. Paró por: No hay más correos con turno
+08:56:50.652 [Test worker] WARN co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío 42 no salió (intento 1 de 3): Servidor caído. Se reintenta en 15 minutos
+08:56:50.652 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío: 0 enviados, 1 para reintentar, 0 fallidos, 0 cancelados. Paró por: El buzón no respondió: se reintenta más tarde
+08:56:50.654 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío 42 cancelado: el destinatario está en la lista de bloqueo
+08:56:50.654 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío: 0 enviados, 0 para reintentar, 0 fallidos, 1 cancelados. Paró por: No hay más correos con turno
+08:56:50.656 [Test worker] WARN co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío 42 fallido (1 de 3 intentos, error permanente): Rechazada
+08:56:50.657 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Correo enviado: envío 43, borrador 7
+08:56:50.657 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío: 1 enviados, 0 para reintentar, 1 fallidos, 0 cancelados. Paró por: No hay más correos con turno
+08:56:50.659 [Test worker] WARN co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- No se envía nada: la configuración vigente no tiene buzón (MAILBOX_SSM_KEY, lo carga TI)
+08:56:50.661 [Test worker] WARN co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío 42 no salió (intento 1 de 3): Servidor caído. Se reintenta en 15 minutos
+08:56:50.661 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío: 0 enviados, 1 para reintentar, 0 fallidos, 0 cancelados. Paró por: El buzón no respondió: se reintenta más tarde
+08:56:50.663 [Test worker] WARN co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío 42 fallido (3 de 3 intentos, sin más intentos): Servidor caído
+08:56:50.664 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendDispatcher -- Envío: 0 enviados, 0 para reintentar, 1 fallidos, 0 cancelados. Paró por: No hay más correos con turno
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

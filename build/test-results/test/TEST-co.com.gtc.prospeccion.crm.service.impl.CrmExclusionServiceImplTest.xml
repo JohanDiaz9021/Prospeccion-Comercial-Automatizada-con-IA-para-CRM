@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.crm.service.impl.CrmExclusionServiceImplTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:46.620Z" hostname="DESKTOP-4TARBHR" time="0.017">
+  <properties/>
+  <testcase name="colaboradoresCompetidoresYClientesNoSeProspectanAunqueSeaUnSubdominio()" classname="co.com.gtc.prospeccion.crm.service.impl.CrmExclusionServiceImplTest" time="0.007"/>
+  <testcase name="losComodinesDeLikeSeBuscanTalCual()" classname="co.com.gtc.prospeccion.crm.service.impl.CrmExclusionServiceImplTest" time="0.0"/>
+  <testcase name="personaNuevaDeEmpresaNuevaSePuedeProspectar()" classname="co.com.gtc.prospeccion.crm.service.impl.CrmExclusionServiceImplTest" time="0.0"/>
+  <testcase name="lasReglasBaratasVanAntesQueLasConsultasAlCrm()" classname="co.com.gtc.prospeccion.crm.service.impl.CrmExclusionServiceImplTest" time="0.001"/>
+  <testcase name="siElCorreoYaEstaEnElCrmComoProspectoOProveedorNoSeLeEscribe()" classname="co.com.gtc.prospeccion.crm.service.impl.CrmExclusionServiceImplTest" time="0.001"/>
+  <testcase name="unaSolaPersonaPorEmpresaYNuncaElMismoCorreoDosVeces()" classname="co.com.gtc.prospeccion.crm.service.impl.CrmExclusionServiceImplTest" time="0.001"/>
+  <testcase name="siAlguienDeLaEmpresaYaEstaEnElCrmNoSeLeEscribeAOtraPersona()" classname="co.com.gtc.prospeccion.crm.service.impl.CrmExclusionServiceImplTest" time="0.002"/>
+  <testcase name="laListaDeBloqueoGanaSobreTodo()" classname="co.com.gtc.prospeccion.crm.service.impl.CrmExclusionServiceImplTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

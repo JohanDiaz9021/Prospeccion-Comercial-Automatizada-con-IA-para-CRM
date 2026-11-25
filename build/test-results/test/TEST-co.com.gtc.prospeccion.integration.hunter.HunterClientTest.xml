@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.integration.hunter.HunterClientTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:48.013Z" hostname="DESKTOP-4TARBHR" time="0.045">
+  <properties/>
+  <testcase name="finderSinCorreoDevuelveVacio()" classname="co.com.gtc.prospeccion.integration.hunter.HunterClientTest" time="0.01"/>
+  <testcase name="finder451EsPersonaQuePidioNoSerProcesada()" classname="co.com.gtc.prospeccion.integration.hunter.HunterClientTest" time="0.002"/>
+  <testcase name="finderEnviaLaLlaveEnElEncabezadoYLeeData()" classname="co.com.gtc.prospeccion.integration.hunter.HunterClientTest" time="0.002"/>
+  <testcase name="verifierCorreoInvalidoEsRechazo()" classname="co.com.gtc.prospeccion.integration.hunter.HunterClientTest" time="0.005"/>
+  <testcase name="errorDelServidorAgotaLosReintentos()" classname="co.com.gtc.prospeccion.integration.hunter.HunterClientTest" time="0.003"/>
+  <testcase name="verificacionEnCursoSeVuelveAConsultar()" classname="co.com.gtc.prospeccion.integration.hunter.HunterClientTest" time="0.003"/>
+  <testcase name="limitePorSegundoEsperaYReintenta()" classname="co.com.gtc.prospeccion.integration.hunter.HunterClientTest" time="0.004"/>
+  <testcase name="verifierLeeElEstadoYLosCreditos()" classname="co.com.gtc.prospeccion.integration.hunter.HunterClientTest" time="0.004"/>
+  <testcase name="cuentaDevuelveElSaldoDeLaBolsaUnica()" classname="co.com.gtc.prospeccion.integration.hunter.HunterClientTest" time="0.005"/>
+  <testcase name="sinLlaveOParametrosNoLlama()" classname="co.com.gtc.prospeccion.integration.hunter.HunterClientTest" time="0.001"/>
+  <testcase name="siLaVerificacionNoTerminaSeRinde()" classname="co.com.gtc.prospeccion.integration.hunter.HunterClientTest" time="0.001"/>
+  <testcase name="cupoDelPlanAgotadoNoSeReintenta()" classname="co.com.gtc.prospeccion.integration.hunter.HunterClientTest" time="0.003"/>
+  <system-out><![CDATA[08:56:48.035 [Test worker] WARN co.com.gtc.prospeccion.integration.hunter.HunterClient -- Hunter: HTTP 503; reintento 1 de 2 en 1182 ms
+08:56:48.036 [Test worker] WARN co.com.gtc.prospeccion.integration.hunter.HunterClient -- Hunter: HTTP 503; reintento 2 de 2 en 2441 ms
+08:56:48.041 [Test worker] WARN co.com.gtc.prospeccion.integration.hunter.HunterClient -- Hunter: HTTP 403; reintento 1 de 2 en 1383 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

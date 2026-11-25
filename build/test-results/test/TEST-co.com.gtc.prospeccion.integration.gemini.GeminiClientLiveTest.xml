@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.integration.gemini.GeminiClientLiveTest" tests="2" skipped="2" failures="0" errors="0" timestamp="2026-11-25T13:56:47.848Z" hostname="DESKTOP-4TARBHR" time="0.0">
+  <properties/>
+  <testcase name="respondeJsonConElEsquemaPedido()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientLiveTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="calificaContactosInventadosConElPerfilAprobado()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientLiveTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

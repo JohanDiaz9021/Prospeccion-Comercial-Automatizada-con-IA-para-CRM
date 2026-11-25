@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.tracking.inbound.InboundClassifierTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:50.872Z" hostname="DESKTOP-4TARBHR" time="0.004">
+  <properties/>
+  <testcase name="laBajaQueEstaEnNuestroCorreoCitadoNoCuenta()" classname="co.com.gtc.prospeccion.tracking.inbound.InboundClassifierTest" time="0.0"/>
+  <testcase name="fueraDeLaOficinaNoEsRespuesta()" classname="co.com.gtc.prospeccion.tracking.inbound.InboundClassifierTest" time="0.001"/>
+  <testcase name="sacaLaDireccionDelRemitente()" classname="co.com.gtc.prospeccion.tracking.inbound.InboundClassifierTest" time="0.0"/>
+  <testcase name="unaPersonaQueContestaEsRespuesta()" classname="co.com.gtc.prospeccion.tracking.inbound.InboundClassifierTest" time="0.001"/>
+  <testcase name="reboteConCodigo5EsDuroYCon4EsTemporal()" classname="co.com.gtc.prospeccion.tracking.inbound.InboundClassifierTest" time="0.0"/>
+  <testcase name="unaQuejaEsQueja()" classname="co.com.gtc.prospeccion.tracking.inbound.InboundClassifierTest" time="0.0"/>
+  <testcase name="elTextoNuevoTerminaDondeEmpiezaLaCita()" classname="co.com.gtc.prospeccion.tracking.inbound.InboundClassifierTest" time="0.0"/>
+  <testcase name="pedirLaBajaEscribiendoEsBajaAunqueTengaTildesOMayusculas()" classname="co.com.gtc.prospeccion.tracking.inbound.InboundClassifierTest" time="0.0"/>
+  <testcase name="reboteDeOutlookSinPartesSeReconocePorRemitenteAsuntoYTexto()" classname="co.com.gtc.prospeccion.tracking.inbound.InboundClassifierTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

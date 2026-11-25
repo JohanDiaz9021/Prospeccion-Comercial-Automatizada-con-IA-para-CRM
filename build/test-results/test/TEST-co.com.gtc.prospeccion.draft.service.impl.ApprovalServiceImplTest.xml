@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.draft.service.impl.ApprovalServiceImplTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:47.288Z" hostname="DESKTOP-4TARBHR" time="0.031">
+  <properties/>
+  <testcase name="unaVersionViejaNoSeApruebaNiSeEncola()" classname="co.com.gtc.prospeccion.draft.service.impl.ApprovalServiceImplTest" time="0.005"/>
+  <testcase name="siElEncoladoFallaElErrorSaleParaQueSeDeshagaLaAprobacion()" classname="co.com.gtc.prospeccion.draft.service.impl.ApprovalServiceImplTest" time="0.004"/>
+  <testcase name="apruebaYEncolaEnEseOrden()" classname="co.com.gtc.prospeccion.draft.service.impl.ApprovalServiceImplTest" time="0.02"/>
+  <system-out><![CDATA[08:56:47.301 [Test worker] INFO co.com.gtc.prospeccion.draft.service.impl.ApprovalServiceImpl -- Borrador 5 (contacto 900, versión 2) aprobado y en cola
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

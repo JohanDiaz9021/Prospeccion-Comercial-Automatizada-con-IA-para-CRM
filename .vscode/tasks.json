@@ -1,0 +1,254 @@
+{
+  // CRM completo en local, una terminal de VS Code por servicio (tools/crm-local).
+  // Arrancar: Terminal > Run Task... > "CRM completo"  (o Ctrl+Shift+P > "Tasks: Run Task").
+  // Apagar:   Terminal > Run Task... > "CRM: detener todo"  (o la papelera de cada terminal).
+  // Solo Prospección IA (sin el resto del CRM): Run Task > "Prospección IA: mini front" (MySQL, Gemini y Apollo
+  // simulados si no hay GEMINI_API_KEY o APOLLO_API_KEY, msa-prospeccion y el mini front en http://localhost:4300).
+  // Cada tarea espera a que su servicio diga "Started..." (Spring) o "Compiled successfully" (Angular)
+  // antes de lanzar la siguiente. La configuración está en tools/crm-local/comun.ps1 y sale del .env.
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CRM completo",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "CRM: MySQL",
+        "CRM: Eureka (8761)",
+        "CRM: Gateway (8090)",
+        "CRM: msa-security (8089)",
+        "CRM: msa-params (8088)",
+        "CRM: msa-cotizaciones (8085)",
+        "Prospección: Gemini simulado (8771)",
+        "Prospección: Apollo simulado (8772)",
+        "CRM: msa-prospeccion (8099)",
+        "CRM: mf-cotizaciones (4201)",
+        "CRM: gtc-crm-root (4200)",
+        "CRM: abrir navegador"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "CRM: MySQL",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/crm-local/servicio.ps1", "-Servicio", "mysql"],
+      "presentation": { "group": "crm", "panel": "dedicated", "reveal": "silent", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "CRM: Eureka (8761)",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/crm-local/servicio.ps1", "-Servicio", "eureka"],
+      "isBackground": true,
+      "presentation": { "group": "crm", "panel": "dedicated", "reveal": "always", "clear": true },
+      "problemMatcher": {
+        "owner": "crm-local",
+        "pattern": { "regexp": "^__crm_sin_problemas__$" },
+        "background": {
+          "activeBegins": true,
+          "beginsPattern": "^== Iniciando",
+          "endsPattern": "(Started [^ ]+ in [0-9.]+ seconds|APPLICATION FAILED TO START|BUILD FAILED)"
+        }
+      }
+    },
+    {
+      "label": "CRM: Gateway (8090)",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/crm-local/servicio.ps1", "-Servicio", "gateway"],
+      "isBackground": true,
+      "presentation": { "group": "crm", "panel": "dedicated", "reveal": "always", "clear": true },
+      "problemMatcher": {
+        "owner": "crm-local",
+        "pattern": { "regexp": "^__crm_sin_problemas__$" },
+        "background": {
+          "activeBegins": true,
+          "beginsPattern": "^== Iniciando",
+          "endsPattern": "(Started [^ ]+ in [0-9.]+ seconds|APPLICATION FAILED TO START|BUILD FAILED)"
+        }
+      }
+    },
+    {
+      "label": "CRM: msa-security (8089)",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/crm-local/servicio.ps1", "-Servicio", "security"],
+      "isBackground": true,
+      "presentation": { "group": "crm", "panel": "dedicated", "reveal": "always", "clear": true },
+      "problemMatcher": {
+        "owner": "crm-local",
+        "pattern": { "regexp": "^__crm_sin_problemas__$" },
+        "background": {
+          "activeBegins": true,
+          "beginsPattern": "^== Iniciando",
+          "endsPattern": "(Started [^ ]+ in [0-9.]+ seconds|APPLICATION FAILED TO START|BUILD FAILED)"
+        }
+      }
+    },
+    {
+      "label": "CRM: msa-params (8088)",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/crm-local/servicio.ps1", "-Servicio", "params"],
+      "isBackground": true,
+      "presentation": { "group": "crm", "panel": "dedicated", "reveal": "always", "clear": true },
+      "problemMatcher": {
+        "owner": "crm-local",
+        "pattern": { "regexp": "^__crm_sin_problemas__$" },
+        "background": {
+          "activeBegins": true,
+          "beginsPattern": "^== Iniciando",
+          "endsPattern": "(Started [^ ]+ in [0-9.]+ seconds|APPLICATION FAILED TO START|BUILD FAILED)"
+        }
+      }
+    },
+    {
+      "label": "CRM: msa-cotizaciones (8085)",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/crm-local/servicio.ps1", "-Servicio", "cotizaciones"],
+      "isBackground": true,
+      "presentation": { "group": "crm", "panel": "dedicated", "reveal": "always", "clear": true },
+      "problemMatcher": {
+        "owner": "crm-local",
+        "pattern": { "regexp": "^__crm_sin_problemas__$" },
+        "background": {
+          "activeBegins": true,
+          "beginsPattern": "^== Iniciando",
+          "endsPattern": "(Started [^ ]+ in [0-9.]+ seconds|APPLICATION FAILED TO START|BUILD FAILED)"
+        }
+      }
+    },
+    {
+      "label": "CRM: msa-prospeccion (8099)",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/crm-local/servicio.ps1", "-Servicio", "prospeccion"],
+      "isBackground": true,
+      "presentation": { "group": "crm", "panel": "dedicated", "reveal": "always", "clear": true },
+      "problemMatcher": {
+        "owner": "crm-local",
+        "pattern": { "regexp": "^__crm_sin_problemas__$" },
+        "background": {
+          "activeBegins": true,
+          "beginsPattern": "^== Iniciando",
+          "endsPattern": "(Started [^ ]+ in [0-9.]+ seconds|APPLICATION FAILED TO START|BUILD FAILED)"
+        }
+      }
+    },
+    {
+      "label": "CRM: mf-cotizaciones (4201)",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/crm-local/servicio.ps1", "-Servicio", "mf"],
+      "isBackground": true,
+      "presentation": { "group": "crm", "panel": "dedicated", "reveal": "always", "clear": true },
+      "problemMatcher": {
+        "owner": "crm-local",
+        "pattern": { "regexp": "^__crm_sin_problemas__$" },
+        "background": {
+          "activeBegins": true,
+          "beginsPattern": "^== Iniciando",
+          "endsPattern": "([Cc]ompiled successfully|Application bundle generation complete|Failed to compile|Falta instalar)"
+        }
+      }
+    },
+    {
+      "label": "CRM: gtc-crm-root (4200)",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/crm-local/servicio.ps1", "-Servicio", "root"],
+      "isBackground": true,
+      "presentation": { "group": "crm", "panel": "dedicated", "reveal": "always", "clear": true },
+      "problemMatcher": {
+        "owner": "crm-local",
+        "pattern": { "regexp": "^__crm_sin_problemas__$" },
+        "background": {
+          "activeBegins": true,
+          "beginsPattern": "^== Iniciando",
+          "endsPattern": "([Cc]ompiled successfully|Application bundle generation complete|Failed to compile|Falta instalar)"
+        }
+      }
+    },
+    {
+      "label": "Prospección IA: mini front",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "CRM: MySQL",
+        "Prospección: Gemini simulado (8771)",
+        "Prospección: Apollo simulado (8772)",
+        "CRM: msa-prospeccion (8099)",
+        "Prospección: mini front (4300)"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Prospección: Gemini simulado (8771)",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/crm-local/servicio.ps1", "-Servicio", "gemini"],
+      "isBackground": true,
+      "presentation": { "group": "crm", "panel": "dedicated", "reveal": "always", "clear": true },
+      "problemMatcher": {
+        "owner": "crm-local",
+        "pattern": { "regexp": "^__crm_sin_problemas__$" },
+        "background": {
+          "activeBegins": true,
+          "beginsPattern": "^== Iniciando",
+          "endsPattern": "(Gemini simulado en|Hay GEMINI_API_KEY|Traceback)"
+        }
+      }
+    },
+    {
+      "label": "Prospección: Apollo simulado (8772)",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/crm-local/servicio.ps1", "-Servicio", "apollo"],
+      "isBackground": true,
+      "presentation": { "group": "crm", "panel": "dedicated", "reveal": "always", "clear": true },
+      "problemMatcher": {
+        "owner": "crm-local",
+        "pattern": { "regexp": "^__crm_sin_problemas__$" },
+        "background": {
+          "activeBegins": true,
+          "beginsPattern": "^== Iniciando",
+          "endsPattern": "(Apollo simulado en|Hay APOLLO_API_KEY|Traceback)"
+        }
+      }
+    },
+    {
+      "label": "Prospección: mini front (4300)",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/crm-local/servicio.ps1", "-Servicio", "minifront"],
+      "isBackground": true,
+      "presentation": { "group": "crm", "panel": "dedicated", "reveal": "always", "clear": true },
+      "problemMatcher": {
+        "owner": "crm-local",
+        "pattern": { "regexp": "^__crm_sin_problemas__$" },
+        "background": {
+          "activeBegins": true,
+          "beginsPattern": "^== Iniciando",
+          "endsPattern": "(Mini front en|Traceback)"
+        }
+      }
+    },
+    {
+      "label": "CRM: abrir navegador",
+      "type": "process",
+      "command": "cmd.exe",
+      "args": ["/c", "start", "", "http://localhost:4200"],
+      "presentation": { "reveal": "never" },
+      "problemMatcher": []
+    },
+    {
+      "label": "CRM: detener todo",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/crm-local/servicio.ps1", "-Servicio", "detener"],
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+# Solo para desarrollo local: MySQL 8 vacío que simula la base de un tenant.
+# Uso: docker compose -f docker-compose.local.yml up -d
+# Las credenciales salen del archivo .env (copia de .env.example).
+name: msa-prospeccion-crm-local
+
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE:?Define MYSQL_DATABASE en .env}
+      MYSQL_USER: ${MYSQL_USER:?Define MYSQL_USER en .env}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Define MYSQL_PASSWORD en .env}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Define MYSQL_ROOT_PASSWORD en .env}
+      TZ: UTC
+    ports:
+      - "${MYSQL_HOST_PORT:-3308}:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u root -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # Buzón de prueba (tarea 5.2): atrapa todo lo que se envía y nunca lo entrega a nadie.
+  # Solo arranca a propósito:  docker compose -f docker-compose.local.yml --profile correo up -d mailpit
+  # Correos en http://localhost:8025. El servicio lo usa con MAILBOX_PROVIDER=smtp en el .env.
+  mailpit:
+    # Solo para pruebas locales; usa la API v1 de Mailpit (/api/v1/messages y /api/v1/message/{id}/raw).
+    image: axllent/mailpit:latest
+    profiles: ["correo"]
+    restart: unless-stopped
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    environment:
+      MP_MAX_MESSAGES: 2000
+
+volumes:
+  mysql-data:

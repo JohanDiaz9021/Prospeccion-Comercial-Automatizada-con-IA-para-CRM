@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.prospect.service.impl.ProspectCreationServiceImplTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:49.244Z" hostname="DESKTOP-4TARBHR" time="0.033">
+  <properties/>
+  <testcase name="creaEmpresaContactoYCorreoEnElCrmYGuardaLaEvidenciaConSuFuente()" classname="co.com.gtc.prospeccion.prospect.service.impl.ProspectCreationServiceImplTest" time="0.028"/>
+  <testcase name="soloSeCreaConUnCorreoAceptado()" classname="co.com.gtc.prospeccion.prospect.service.impl.ProspectCreationServiceImplTest" time="0.001"/>
+  <testcase name="elCorreoDeHunterQuedaConFuenteHunterYUnDominioRepetidoNoRompeLaUnicidad()" classname="co.com.gtc.prospeccion.prospect.service.impl.ProspectCreationServiceImplTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

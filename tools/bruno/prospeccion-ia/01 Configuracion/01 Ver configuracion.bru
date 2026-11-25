@@ -1,0 +1,21 @@
+meta {
+  name: Ver configuración vigente
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/config
+  body: none
+  auth: inherit
+}
+
+tests {
+  test("responde 200 o 501", function () {
+    expect([200, 501]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Configuración vigente del tenant (la_tenantconfig con FLGACTIVE = 1). Tarea 6.2.
+}

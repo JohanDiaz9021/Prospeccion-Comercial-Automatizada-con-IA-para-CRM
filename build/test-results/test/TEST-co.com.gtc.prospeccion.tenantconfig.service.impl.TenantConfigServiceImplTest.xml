@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImplTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:50.797Z" hostname="DESKTOP-4TARBHR" time="0.028">
+  <properties/>
+  <testcase name="rechazaPerfilQueNoEsJson()" classname="co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImplTest" time="0.006"/>
+  <testcase name="sinConfiguracionDevuelveValoresPorDefecto()" classname="co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImplTest" time="0.002"/>
+  <testcase name="unaVersionDelHistorialSeDevuelveCompleta()" classname="co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImplTest" time="0.004"/>
+  <testcase name="elHistorialTraeQuienCuandoYLoPrincipalDeCadaVersion()" classname="co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImplTest" time="0.005"/>
+  <testcase name="rechazaMarcasValidarSinResolver()" classname="co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImplTest" time="0.002"/>
+  <testcase name="elHistorialIgnoraElOrdenDelClienteYLimitaElTamano()" classname="co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImplTest" time="0.002"/>
+  <testcase name="siOtraPersonaGuardoAntesRespondeConflicto()" classname="co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImplTest" time="0.001"/>
+  <testcase name="guardarCreaUnaVersionNuevaYApagaLaAnteriorPrimero()" classname="co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImplTest" time="0.001"/>
+  <testcase name="siDosGuardanAlMismoTiempoLaBaseLoDetecta()" classname="co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImplTest" time="0.001"/>
+  <testcase name="devuelveLaVersionVigenteSinElBuzon()" classname="co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImplTest" time="0.001"/>
+  <testcase name="laPrimeraConfiguracionQuedaVigenteConAuditoria()" classname="co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImplTest" time="0.001"/>
+  <system-out><![CDATA[08:56:50.822 [Test worker] INFO co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImpl -- Configuración del tenant actualizada: versión 101 (antes 5)
+08:56:50.826 [Test worker] INFO co.com.gtc.prospeccion.tenantconfig.service.impl.TenantConfigServiceImpl -- Configuración del tenant actualizada: versión 100 (antes null)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

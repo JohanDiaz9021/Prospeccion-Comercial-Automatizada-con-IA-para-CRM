@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.integration.apollo.ApolloClientEnrichTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:47.579Z" hostname="DESKTOP-4TARBHR" time="0.101">
+  <properties/>
+  <testcase name="elCorreoDeRellenoDeApolloSeTrataComoSinCorreo()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientEnrichTest" time="0.081"/>
+  <testcase name="sinCoincidenciaDevuelveVacio()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientEnrichTest" time="0.005"/>
+  <testcase name="traeCorreoApellidoYDominioSinPedirCorreosPersonalesNiTelefono()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientEnrichTest" time="0.006"/>
+  <testcase name="llaveInvalidaSeRechazaSinReintentar()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientEnrichTest" time="0.003"/>
+  <testcase name="correoUtil()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientEnrichTest" time="0.002"/>
+  <testcase name="sinIdNoLlamaAApollo()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientEnrichTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

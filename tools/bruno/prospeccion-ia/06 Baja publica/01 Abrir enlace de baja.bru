@@ -1,0 +1,27 @@
+meta {
+  name: Abrir enlace de baja (página)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/unsubscribe?t={{unsubscribeToken}}
+  body: none
+  auth: none
+}
+
+params:query {
+  t: {{unsubscribeToken}}
+}
+
+tests {
+  test("responde 200 (página) o 400 (enlace no válido)", function () {
+    expect([200, 400]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Tarea 5.5. Pública: no lleva JWT. La protege el token firmado del parámetro t, que también dice el tenant.
+  Responde una página HTML con el botón "Darme de Baja". El GET NO da de baja (los antivirus abren los enlaces).
+  Para tener un token: Bruno "91 Herramientas locales / 06 Enlace de baja de un borrador" (solo local).
+}

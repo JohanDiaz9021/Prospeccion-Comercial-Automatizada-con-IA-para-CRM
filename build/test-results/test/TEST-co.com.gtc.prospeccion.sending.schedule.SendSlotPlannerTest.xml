@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.sending.schedule.SendSlotPlannerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:50.406Z" hostname="DESKTOP-4TARBHR" time="0.008">
+  <properties/>
+  <testcase name="sinLimiteDiarioSoloAplicaVentanaYEspaciado()" classname="co.com.gtc.prospeccion.sending.schedule.SendSlotPlannerTest" time="0.003"/>
+  <testcase name="siElEspaciadoPasaDeLas19VaAlDiaHabilSiguiente()" classname="co.com.gtc.prospeccion.sending.schedule.SendSlotPlannerTest" time="0.0"/>
+  <testcase name="sinColaSaleYaSiEstaDentroDeLaVentana()" classname="co.com.gtc.prospeccion.sending.schedule.SendSlotPlannerTest" time="0.0"/>
+  <testcase name="planDeVariosCorreosConLimiteYEspaciado()" classname="co.com.gtc.prospeccion.sending.schedule.SendSlotPlannerTest" time="0.001"/>
+  <testcase name="conElLimiteDiarioLlenoPasaAlDiaHabilSiguiente()" classname="co.com.gtc.prospeccion.sending.schedule.SendSlotPlannerTest" time="0.001"/>
+  <testcase name="respetaElEspaciadoDesdeElUltimoProgramado()" classname="co.com.gtc.prospeccion.sending.schedule.SendSlotPlannerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

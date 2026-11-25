@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.common.util.HtmlSanitizerUtilTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:46.094Z" hostname="DESKTOP-4TARBHR" time="0.106">
+  <properties/>
+  <testcase name="textoPlanoConParrafosVinetasYAcentos()" classname="co.com.gtc.prospeccion.common.util.HtmlSanitizerUtilTest" time="0.098"/>
+  <testcase name="dejaParrafosListasYNegrita()" classname="co.com.gtc.prospeccion.common.util.HtmlSanitizerUtilTest" time="0.002"/>
+  <testcase name="decodificaEntidadesNumericasYConNombre()" classname="co.com.gtc.prospeccion.common.util.HtmlSanitizerUtilTest" time="0.002"/>
+  <testcase name="quitaScriptsEstilosImagenesYAtributos()" classname="co.com.gtc.prospeccion.common.util.HtmlSanitizerUtilTest" time="0.002"/>
+  <testcase name="losEnlacesSoloHttpsOMailtoYConNofollow()" classname="co.com.gtc.prospeccion.common.util.HtmlSanitizerUtilTest" time="0.0"/>
+  <testcase name="vacioONuloDaCadenaVacia()" classname="co.com.gtc.prospeccion.common.util.HtmlSanitizerUtilTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

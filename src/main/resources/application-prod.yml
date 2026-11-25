@@ -1,0 +1,22 @@
+# Perfil prod: Eureka activo, credenciales por tenant desde AWS SSM.
+spring:
+  jpa:
+    properties:
+      hibernate:
+        # El DataSource depende del tenant de cada petición: Hibernate no se conecta al arrancar,
+        # por eso el dialecto se declara explícito.
+        dialect: org.hibernate.dialect.MySQLDialect
+        boot:
+          allow_jdbc_metadata_access: false
+
+# TODO: confirmar con el equipo CRM si Swagger se apaga en producción.
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
+
+logging:
+  level:
+    root: WARN
+    co.com.gtc.prospeccion: INFO

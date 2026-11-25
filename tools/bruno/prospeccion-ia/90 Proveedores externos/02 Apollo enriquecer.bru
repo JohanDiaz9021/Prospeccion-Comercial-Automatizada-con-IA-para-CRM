@@ -1,0 +1,24 @@
+meta {
+  name: Apollo - Enriquecer persona (GASTA 1 crédito)
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://api.apollo.io/api/v1/people/match?id=PEGAR_ID_DE_APOLLO&reveal_personal_emails=false
+  body: none
+  auth: none
+}
+
+params:query {
+  id: PEGAR_ID_DE_APOLLO
+  reveal_personal_emails: false
+}
+
+headers {
+  x-api-key: {{apolloApiKey}}
+}
+
+docs {
+  Gasta 1 crédito si devuelve el correo. Pegar en id el de una persona de la búsqueda anterior.
+}

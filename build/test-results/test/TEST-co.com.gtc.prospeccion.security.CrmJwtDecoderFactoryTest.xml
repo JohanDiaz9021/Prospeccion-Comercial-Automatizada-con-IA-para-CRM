@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.security.CrmJwtDecoderFactoryTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:49.732Z" hostname="DESKTOP-4TARBHR" time="0.15">
+  <properties/>
+  <testcase name="rechazaTokenFirmadoConOtraClave()" classname="co.com.gtc.prospeccion.security.CrmJwtDecoderFactoryTest" time="0.14"/>
+  <testcase name="rechazaTokenVencido()" classname="co.com.gtc.prospeccion.security.CrmJwtDecoderFactoryTest" time="0.004"/>
+  <testcase name="fallaAlArrancarSiLaClaveFaltaOEsInvalida()" classname="co.com.gtc.prospeccion.security.CrmJwtDecoderFactoryTest" time="0.001"/>
+  <testcase name="aceptaTokenHs512DeSuecoAuth()" classname="co.com.gtc.prospeccion.security.CrmJwtDecoderFactoryTest" time="0.003"/>
+  <testcase name="aceptaTokenHs256DelLoginLocal()" classname="co.com.gtc.prospeccion.security.CrmJwtDecoderFactoryTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

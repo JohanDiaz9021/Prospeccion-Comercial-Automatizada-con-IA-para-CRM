@@ -1,0 +1,17 @@
+meta {
+  name: Ver borrador
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/drafts/{{draftId}}
+  body: none
+  auth: inherit
+}
+
+tests {
+  test("responde 200 o 404 o 501", function () {
+    expect([200, 404, 501]).to.include(res.getStatus());
+  });
+}

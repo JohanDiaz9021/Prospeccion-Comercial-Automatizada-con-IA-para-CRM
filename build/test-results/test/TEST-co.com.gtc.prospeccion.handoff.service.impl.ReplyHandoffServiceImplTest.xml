@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImplTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:44.059Z" hostname="DESKTOP-4TARBHR" time="0.504">
+  <properties/>
+  <testcase name="apagadoNoMiraNada()" classname="co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImplTest" time="0.386"/>
+  <testcase name="siElCrmFallaQuedaParaLaSiguientePasada()" classname="co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImplTest" time="0.053"/>
+  <testcase name="sinProspectoEnElCrmNoSeCreaLaTarea()" classname="co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImplTest" time="0.009"/>
+  <testcase name="quienRespondePasaAlVendedorConUnaTareaSobreSuProspecto()" classname="co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImplTest" time="0.011"/>
+  <testcase name="prioridadYPeriodicidadConfiguradasVanEnLaTarea()" classname="co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImplTest" time="0.006"/>
+  <testcase name="sinRespuestasPendientesNoHaceNada()" classname="co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImplTest" time="0.004"/>
+  <testcase name="conUnTipoDeTareaQueNoExisteNoIntentaNadaYLoDice()" classname="co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImplTest" time="0.004"/>
+  <testcase name="sinQuienAproboNoSeCreaLaTarea()" classname="co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImplTest" time="0.003"/>
+  <testcase name="elVencimientoSaltaFinesDeSemanaYFestivos()" classname="co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImplTest" time="0.003"/>
+  <system-out><![CDATA[08:56:44.486 [Test worker] WARN co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImpl -- La respuesta del envío 42 no pasó al vendedor; se reintenta en la siguiente pasada: caído
+08:56:44.490 [Test worker] INFO co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImpl -- Pasar al vendedor: 0 con tarea creada, 1 para reintentar
+08:56:44.512 [Test worker] WARN co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImpl -- La respuesta del envío 42 no pasó al vendedor; se reintenta en la siguiente pasada: el contacto 900 no tiene prospecto en el CRM
+08:56:44.513 [Test worker] INFO co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImpl -- Pasar al vendedor: 0 con tarea creada, 1 para reintentar
+08:56:44.523 [Test worker] INFO co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImpl -- Respuesta del envío 42 pasó al vendedor (usuario 15): tarea 5001 en el prospecto 300
+08:56:44.523 [Test worker] INFO co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImpl -- Pasar al vendedor: 1 con tarea creada, 0 para reintentar
+08:56:44.538 [Test worker] WARN co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImpl -- HANDOFF_PERIODICITY_CODE = 1 no existe en el catálogo 248 del CRM: la tarea se crea sin ese dato
+08:56:44.538 [Test worker] INFO co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImpl -- Respuesta del envío 42 pasó al vendedor (usuario 15): tarea 5001 en el prospecto 300
+08:56:44.538 [Test worker] INFO co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImpl -- Pasar al vendedor: 1 con tarea creada, 0 para reintentar
+08:56:44.550 [Test worker] WARN co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImpl -- 1 respuestas esperan pasar al vendedor: el tipo de tarea 99 no existe en el catálogo 246 del CRM (HANDOFF_TASK_TYPE_CODE)
+08:56:44.558 [Test worker] WARN co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImpl -- La respuesta del envío 42 no pasó al vendedor; se reintenta en la siguiente pasada: el borrador 7 no tiene quién lo aprobó
+08:56:44.558 [Test worker] INFO co.com.gtc.prospeccion.handoff.service.impl.ReplyHandoffServiceImpl -- Pasar al vendedor: 0 con tarea creada, 1 para reintentar
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\GTC-096\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.19\154da3a65b4f4a909d3e5bdec55d1b2b4cbb6ce1\byte-buddy-agent-1.14.19.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

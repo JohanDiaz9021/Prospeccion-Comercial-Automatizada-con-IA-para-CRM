@@ -1,0 +1,63 @@
+meta {
+  name: Ejecutar búsqueda (campaña diaria)
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/search/run
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "naturalQuery": "gerentes de TI de clínicas medianas en Bogotá",
+    "filters": {
+      "personTitles": [
+        "Gerente de TI",
+        "Director de Tecnología",
+        "IT Manager"
+      ],
+      "personSeniorities": [
+        "director",
+        "manager"
+      ],
+      "organizationLocations": [
+        "Bogota, Colombia"
+      ],
+      "organizationIndustries": [
+        "hospital & health care"
+      ],
+      "organizationNumEmployeesRanges": [
+        "51,200",
+        "201,500"
+      ],
+      "keywords": []
+    },
+    "pmListContactId": null,
+    "scheduled": true,
+    "frequency": "WEEKLY"
+  }
+}
+
+script:post-response {
+  if (res.getStatus() === 200) {
+    bru.setVar("searchRunId", res.getBody().data.id);
+  }
+}
+
+tests {
+  test("responde 200 con la búsqueda Pendiente", function () {
+    expect(res.getStatus()).to.equal(200);
+    expect(res.getBody().data.statusCode).to.equal("1");
+  });
+}
+
+docs {
+  Tarea 3.2. Guarda la búsqueda y la ejecuta en segundo plano: Apollo, descartes, calificación, correo, contacto y
+  borrador en la bandeja. GASTA CRÉDITOS al conseguir correos (con los topes de la 4.2).
+  Con scheduled = true queda además como campaña: el job de las 6:00 la repite según frequency (DAILY = cada día
+  hábil, por defecto; WEEKLY = 7 días después de su última ejecución).
+  El avance se consulta con "05 Avance de una busqueda".
+}

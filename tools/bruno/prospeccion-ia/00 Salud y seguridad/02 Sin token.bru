@@ -1,0 +1,21 @@
+meta {
+  name: Sin token -> 401
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/config
+  body: none
+  auth: none
+}
+
+tests {
+  test("responde 401", function () {
+    expect([401]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Sin Authorization: 401. Directo al servicio el cuerpo trae `lblUnauthorized`; por el gateway, cuerpo vacío.
+}

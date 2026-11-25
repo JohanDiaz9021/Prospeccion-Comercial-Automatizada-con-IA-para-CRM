@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.tracking.controller.OpenPixelControllerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:50.825Z" hostname="DESKTOP-4TARBHR" time="0.004">
+  <properties/>
+  <testcase name="encendidoRegistraEnElTenantDelTokenYLoSuelta()" classname="co.com.gtc.prospeccion.tracking.controller.OpenPixelControllerTest" time="0.001"/>
+  <testcase name="apagadoPorDefectoDevuelveLaImagenSinRegistrarNada()" classname="co.com.gtc.prospeccion.tracking.controller.OpenPixelControllerTest" time="0.002"/>
+  <testcase name="tokenMaloTenantApagadoOErrorSiempreDevuelvenLaImagen()" classname="co.com.gtc.prospeccion.tracking.controller.OpenPixelControllerTest" time="0.001"/>
+  <system-out><![CDATA[08:56:50.829 [Test worker] WARN co.com.gtc.prospeccion.tracking.controller.OpenPixelController -- Píxel de apertura: no se pudo registrar (IllegalStateException)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

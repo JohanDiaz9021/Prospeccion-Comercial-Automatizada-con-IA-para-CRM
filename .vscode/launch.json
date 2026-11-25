@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "MsaProspeccionApplication (local)",
+      "request": "launch",
+      "mainClass": "co.com.gtc.prospeccion.MsaProspeccionApplication",
+      "projectName": "msa-prospeccion-crm",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "SPRING_PROFILES_ACTIVE": "local"
+      }
+    }
+  ]
+}

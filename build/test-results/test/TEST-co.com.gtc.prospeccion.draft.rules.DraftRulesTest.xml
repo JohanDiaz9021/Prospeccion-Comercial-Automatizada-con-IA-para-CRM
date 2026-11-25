@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:47.136Z" hostname="DESKTOP-4TARBHR" time="0.043">
+  <properties/>
+  <testcase name="elEjemploDelDocumentoCumpleSinAvisos()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.013"/>
+  <testcase name="cuentaPalabrasSinVinetas()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.0"/>
+  <testcase name="siglasCortasNoSonMayusculasSostenidas()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.002"/>
+  <testcase name="limpiaElAsunto()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.001"/>
+  <testcase name="marcasSinLlenarYSinFirmaSonErrores()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.002"/>
+  <testcase name="losNumerosDelContactoYDelMensajeBaseSePermiten()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.002"/>
+  <testcase name="laFirmaSeReconoceAunqueCambieLaPuntuacion()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.002"/>
+  <testcase name="unaInstruccionPersonalizarQueQuedoEsError()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.002"/>
+  <testcase name="elAsuntoDelMensajeBaseConUnaEmpresaDe17LetrasPasaDe60()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.001"/>
+  <testcase name="unAsuntoDeMasDe150CaracteresEsError()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.001"/>
+  <testcase name="numerosQueNoVienenEnLosDatosSonAviso()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.001"/>
+  <testcase name="muyCortoOMuyLargoSonAvisos()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.002"/>
+  <testcase name="vacioEsError()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.001"/>
+  <testcase name="laFirmaEsLaUltimaLineaDelMensajeBase()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.001"/>
+  <testcase name="largoAsuntoExclamacionesEmojiYMayusculasSonAvisos()" classname="co.com.gtc.prospeccion.draft.rules.DraftRulesTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

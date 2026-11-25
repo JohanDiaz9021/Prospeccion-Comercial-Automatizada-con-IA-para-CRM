@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:47.685Z" hostname="DESKTOP-4TARBHR" time="0.086">
+  <properties/>
+  <testcase name="ante429CortoEsperaLoQuePideApolloYReintenta()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" time="0.017"/>
+  <testcase name="recorrePaginasHastaAcabarLosResultados()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" time="0.022"/>
+  <testcase name="validaLosLimitesDePaginacion()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" time="0.003"/>
+  <testcase name="ante429LargoNoBloqueaYAvisaCuandoReintentar()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" time="0.006"/>
+  <testcase name="seRindeAlAgotarLosReintentos()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" time="0.004"/>
+  <testcase name="noPasaDelTopeDe50000Resultados()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" time="0.002"/>
+  <testcase name="leeLasPersonasSinCorreoYElCupoRestante()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" time="0.005"/>
+  <testcase name="omiteLosFiltrosVacios()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" time="0.002"/>
+  <testcase name="reintentaAnteErroresDelServidorYFallasDeRed()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" time="0.005"/>
+  <testcase name="llaveSinAccesoNoSeReintenta()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" time="0.003"/>
+  <testcase name="seDetieneAlJuntarElMaximoPedido()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" time="0.005"/>
+  <testcase name="sinLlaveNoSeLlamaAApollo()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" time="0.002"/>
+  <testcase name="envíaFiltrosComoQueryParamsYLaLlaveEnElEncabezado()" classname="co.com.gtc.prospeccion.integration.apollo.ApolloClientTest" time="0.005"/>
+  <system-out><![CDATA[08:56:47.695 [Test worker] WARN co.com.gtc.prospeccion.integration.apollo.ApolloClient -- Apollo: HTTP 429; reintento 1 de 3 en 12000 ms
+08:56:47.736 [Test worker] WARN co.com.gtc.prospeccion.integration.apollo.ApolloClient -- Apollo: HTTP 502; reintento 1 de 3 en 2877 ms
+08:56:47.737 [Test worker] WARN co.com.gtc.prospeccion.integration.apollo.ApolloClient -- Apollo: HTTP 502; reintento 2 de 3 en 4616 ms
+08:56:47.737 [Test worker] WARN co.com.gtc.prospeccion.integration.apollo.ApolloClient -- Apollo: HTTP 502; reintento 3 de 3 en 8968 ms
+08:56:47.750 [Test worker] WARN co.com.gtc.prospeccion.integration.apollo.ApolloClient -- Apollo: HTTP 503; reintento 1 de 3 en 2734 ms
+08:56:47.750 [Test worker] WARN co.com.gtc.prospeccion.integration.apollo.ApolloClient -- Apollo: falla de red (IOException); reintento 2 de 3 en 4582 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

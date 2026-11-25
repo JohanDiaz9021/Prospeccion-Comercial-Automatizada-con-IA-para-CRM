@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.search.service.impl.CampaignScheduleTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:49.442Z" hostname="DESKTOP-4TARBHR" time="0.061">
+  <properties/>
+  <testcase name="elJobSoloEjecutaLasQueTocanYAQuienCreoLaCampana()" classname="co.com.gtc.prospeccion.search.service.impl.CampaignScheduleTest" time="0.056"/>
+  <testcase name="sinConfiguracionActivaNoEjecutaNada()" classname="co.com.gtc.prospeccion.search.service.impl.CampaignScheduleTest" time="0.001"/>
+  <testcase name="diariaCorreSiNoHaCorridoHoy()" classname="co.com.gtc.prospeccion.search.service.impl.CampaignScheduleTest" time="0.0"/>
+  <testcase name="forzarEjecutaTodasLasActivas()" classname="co.com.gtc.prospeccion.search.service.impl.CampaignScheduleTest" time="0.0"/>
+  <testcase name="semanalCorreSieteDiasDespuesDeSuUltimaEjecucion()" classname="co.com.gtc.prospeccion.search.service.impl.CampaignScheduleTest" time="0.0"/>
+  <system-out><![CDATA[08:56:49.500 [Test worker] WARN co.com.gtc.prospeccion.search.service.impl.ProspectSearchServiceImpl -- Hay 1 campaña(s) activa(s) pero el tenant no tiene configuración activa: no se ejecutan
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

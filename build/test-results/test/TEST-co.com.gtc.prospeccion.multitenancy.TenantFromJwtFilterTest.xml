@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.multitenancy.TenantFromJwtFilterTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:49.083Z" hostname="DESKTOP-4TARBHR" time="0.02">
+  <properties/>
+  <testcase name="dejaPasarSinTenantLasPeticionesSinJwt()" classname="co.com.gtc.prospeccion.multitenancy.TenantFromJwtFilterTest" time="0.004"/>
+  <testcase name="rechazaTokenSinDbCode()" classname="co.com.gtc.prospeccion.multitenancy.TenantFromJwtFilterTest" time="0.01"/>
+  <testcase name="rechazaSiElHeaderNoCoincideConElToken()" classname="co.com.gtc.prospeccion.multitenancy.TenantFromJwtFilterTest" time="0.001"/>
+  <testcase name="rechazaTenantNoHabilitado()" classname="co.com.gtc.prospeccion.multitenancy.TenantFromJwtFilterTest" time="0.001"/>
+  <testcase name="elTenantFijoNoReemplazaElDelTokenNiSaltaLasValidaciones()" classname="co.com.gtc.prospeccion.multitenancy.TenantFromJwtFilterTest" time="0.0"/>
+  <testcase name="enLocalUsaElTenantFijoSiElTokenNoTraeDbCode()" classname="co.com.gtc.prospeccion.multitenancy.TenantFromJwtFilterTest" time="0.0"/>
+  <testcase name="fijaElTenantDelTokenYLoLimpiaAlTerminar()" classname="co.com.gtc.prospeccion.multitenancy.TenantFromJwtFilterTest" time="0.0"/>
+  <testcase name="aceptaElHeaderSiCoincideConElToken()" classname="co.com.gtc.prospeccion.multitenancy.TenantFromJwtFilterTest" time="0.001"/>
+  <system-out><![CDATA[08:56:49.095 [Test worker] WARN co.com.gtc.prospeccion.multitenancy.TenantFromJwtFilter -- Petición rechazada (GET /api/config): el token no trae db_code
+08:56:49.098 [Test worker] WARN co.com.gtc.prospeccion.multitenancy.TenantFromJwtFilter -- Petición rechazada (GET /api/config): el header X-Tenant-Database-Code no coincide con el token
+08:56:49.100 [Test worker] WARN co.com.gtc.prospeccion.multitenancy.TenantFromJwtFilter -- Petición rechazada (GET /api/config): el módulo no está habilitado para el tenant tenant_b
+08:56:49.101 [Test worker] WARN co.com.gtc.prospeccion.multitenancy.TenantFromJwtFilter -- Petición rechazada (GET /api/config): el módulo no está habilitado para el tenant tenant_b
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

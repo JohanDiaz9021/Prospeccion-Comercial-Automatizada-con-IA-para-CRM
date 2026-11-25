@@ -1,0 +1,21 @@
+meta {
+  name: Lista de bloqueo
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/suppressions?page=0&size=20
+  body: none
+  auth: inherit
+}
+
+tests {
+  test("responde 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+}
+
+docs {
+  Tarea 5.5. Correos a los que nunca se vuelve a escribir (bajas, rebotes duros, quejas), el más reciente primero.
+}

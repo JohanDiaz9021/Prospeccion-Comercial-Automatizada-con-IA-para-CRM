@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:46.391Z" hostname="DESKTOP-4TARBHR" time="0.095">
+  <properties/>
+  <testcase name="siElSaldoDeHunterNoAlcanzaUnaCampanaAvisa()" classname="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" time="0.021"/>
+  <testcase name="sinUsuarioUsaElDeLaPeticionYSinPrecioNoCalculaCosto()" classname="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" time="0.004"/>
+  <testcase name="elTopePorCampanaDetieneAntesDeGastar()" classname="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" time="0.003"/>
+  <testcase name="elSaldoDeHunterSaleDeCupoMenosUsadoCuandoNoTraeRemaining()" classname="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" time="0.002"/>
+  <testcase name="lasAlertasSonLosProveedoresQueNoEstanEnOk()" classname="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" time="0.024"/>
+  <testcase name="elPresupuestoMensualCuentaDesdeElDiaUnoDelMes()" classname="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" time="0.003"/>
+  <testcase name="resumenDelMesConPorcentajeYEstado()" classname="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" time="0.003"/>
+  <testcase name="siNoSePuedeLeerElSaldoDiceElMotivo()" classname="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" time="0.003"/>
+  <testcase name="presupuestoAgotadoQuedaExcedido()" classname="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" time="0.002"/>
+  <testcase name="dentroDeLosTopesDejaSeguir()" classname="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" time="0.003"/>
+  <testcase name="topeEnCeroEsSinTopeYGeminiNoTieneTope()" classname="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" time="0.002"/>
+  <testcase name="anotaElGastoConAuditoriaYCostoEstimado()" classname="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" time="0.004"/>
+  <testcase name="losGastosEnCeroNoSeAnotan()" classname="co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImplTest" time="0.002"/>
+  <system-out><![CDATA[08:56:46.429 [Test worker] WARN co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImpl -- No se pudo consultar el saldo de Hunter: Configuration (sin llave)
+08:56:46.429 [Test worker] WARN co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImpl -- Créditos de APOLLO en 2026-11: 1000 usados de 1000 (100 %), saldo del proveedor null. Estado EXCEEDED
+08:56:46.461 [Test worker] WARN co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImpl -- No se pudo consultar el saldo de Hunter: Configuration (sin llave)
+08:56:46.464 [Test worker] WARN co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImpl -- No se pudo consultar el saldo de Hunter: Configuration (sin llave)
+08:56:46.469 [Test worker] WARN co.com.gtc.prospeccion.credits.service.impl.CreditLedgerServiceImpl -- No se pudo consultar el saldo de Hunter: Configuration (sin llave)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

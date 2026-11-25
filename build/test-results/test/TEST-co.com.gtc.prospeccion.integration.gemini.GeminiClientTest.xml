@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:47.915Z" hostname="DESKTOP-4TARBHR" time="0.091">
+  <properties/>
+  <testcase name="reintentaAnteDemasiadasPeticiones()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.008"/>
+  <testcase name="ignoraElRazonamientoInternoDelModelo()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.005"/>
+  <testcase name="respetaElTiempoQuePideGoogle()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.006"/>
+  <testcase name="respuestaVacia()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.005"/>
+  <testcase name="seRindeAlAgotarLosReintentos()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.005"/>
+  <testcase name="respetaElEncabezadoRetryAfter()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.005"/>
+  <testcase name="laEsperaTieneUnMaximo()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.006"/>
+  <testcase name="unErrorDePeticionNoSeReintenta()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.004"/>
+  <testcase name="reintentaAnteFallasDeRed()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.004"/>
+  <testcase name="reintentaAnteServicioNoDisponible()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.004"/>
+  <testcase name="niLasPropiedadesNiLaPeticionMuestranDatosSensibles()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.007"/>
+  <testcase name="promptBloqueadoPorSeguridad()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.004"/>
+  <testcase name="enviaInstruccionesYEsquemaJson()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.013"/>
+  <testcase name="sinLlaveNoSeLlamaAGoogle()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.002"/>
+  <testcase name="promptVacio()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.001"/>
+  <testcase name="laLlaveVaEnElEncabezadoYNoEnLaUrl()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientTest" time="0.005"/>
+  <system-out><![CDATA[08:56:47.921 [Test worker] WARN co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini: HTTP 429; reintento 1 de 3 en 2169 ms
+08:56:47.922 [Test worker] WARN co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini: HTTP 429; reintento 2 de 3 en 4206 ms
+08:56:47.932 [Test worker] WARN co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini: HTTP 429; reintento 1 de 3 en 7000 ms
+08:56:47.944 [Test worker] WARN co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini: HTTP 429; reintento 1 de 3 en 2773 ms
+08:56:47.945 [Test worker] WARN co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini: HTTP 429; reintento 2 de 3 en 4640 ms
+08:56:47.945 [Test worker] WARN co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini: HTTP 429; reintento 3 de 3 en 8662 ms
+08:56:47.949 [Test worker] WARN co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini: HTTP 503; reintento 1 de 3 en 4000 ms
+08:56:47.956 [Test worker] WARN co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini: HTTP 429; reintento 1 de 3 en 60000 ms
+08:56:47.965 [Test worker] WARN co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini: falla de red (IOException); reintento 1 de 3 en 2895 ms
+08:56:47.971 [Test worker] WARN co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini: HTTP 503; reintento 1 de 3 en 2958 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImplTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:50.772Z" hostname="DESKTOP-4TARBHR" time="0.02">
+  <properties/>
+  <testcase name="fueraDeLaVentanaNoMiraLaCola()" classname="co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImplTest" time="0.002"/>
+  <testcase name="sinCupoDiarioNoEnviaNada()" classname="co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImplTest" time="0.001"/>
+  <testcase name="unCorreoBloqueadoNoSeEncola()" classname="co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImplTest" time="0.002"/>
+  <testcase name="sinCorreoEnLaEvidenciaNoSeEncola()" classname="co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImplTest" time="0.002"/>
+  <testcase name="encolaElBorradorAprobadoConSuTurno()" classname="co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImplTest" time="0.001"/>
+  <testcase name="soloSeEncolanBorradoresAprobados()" classname="co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImplTest" time="0.001"/>
+  <testcase name="enviarYaSinTurnoEsForzadoYSinBuzonLoDice()" classname="co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImplTest" time="0.001"/>
+  <testcase name="siYaEstabaEnColaNoCreaOtra()" classname="co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImplTest" time="0.0"/>
+  <testcase name="sinBuzonNoEnviaNada()" classname="co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImplTest" time="0.0"/>
+  <testcase name="estadoDeLaColaEnHoraDeColombia()" classname="co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImplTest" time="0.001"/>
+  <testcase name="conTurnosCupoYBuzonEnviaConElDespachador()" classname="co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImplTest" time="0.0"/>
+  <system-out><![CDATA[08:56:50.777 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImpl -- Límite diario alcanzado o envío pausado (DAILY_SEND_LIMIT): 3 correos esperan
+08:56:50.784 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImpl -- Borrador 77 en cola para 2026-11-23T10:02 (hora de Colombia)
+08:56:50.790 [Test worker] INFO co.com.gtc.prospeccion.sending.service.impl.SendQueueServiceImpl -- 3 correos tienen turno, pero no hay buzón configurado (prospeccion.mailbox.provider = none)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

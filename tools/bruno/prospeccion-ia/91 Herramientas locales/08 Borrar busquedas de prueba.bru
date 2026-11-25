@@ -1,0 +1,16 @@
+meta {
+  name: Borrar búsquedas de prueba
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{baseUrl}}/api/dev/search/data
+  body: none
+  auth: inherit
+}
+
+docs {
+  Solo perfil local. Borra todas las búsquedas y lo que crearon en la base local (contactos, evidencia, borradores,
+  turnos de envío y la memoria de Apollo). El gasto de créditos se conserva.
+}

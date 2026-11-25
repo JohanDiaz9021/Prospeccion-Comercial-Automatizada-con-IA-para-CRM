@@ -1,0 +1,35 @@
+meta {
+  name: Apollo - Buscar personas (0 créditos)
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://api.apollo.io/api/v1/mixed_people/api_search?person_titles[]=Gerente%20de%20TI&person_locations[]=Bogota,%20Colombia&organization_num_employees_ranges[]=51,200&per_page=5&page=1
+  body: none
+  auth: none
+}
+
+params:query {
+  person_titles[]: Gerente%20de%20TI
+  person_locations[]: Bogota,%20Colombia
+  organization_num_employees_ranges[]: 51,200
+  per_page: 5
+  page: 1
+}
+
+headers {
+  x-api-key: {{apolloApiKey}}
+  Cache-Control: no-cache
+}
+
+tests {
+  test("responde 200", function () {
+    expect([200]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  No gasta créditos y no devuelve correos: trae total_entries y has_email por persona.
+  La cuenta debe estar creada con un correo corporativo.
+}

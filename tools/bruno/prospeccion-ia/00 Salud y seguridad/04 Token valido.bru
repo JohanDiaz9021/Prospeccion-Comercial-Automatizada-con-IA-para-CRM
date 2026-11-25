@@ -1,0 +1,21 @@
+meta {
+  name: Token válido -> pasa la seguridad
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/config
+  body: none
+  auth: inherit
+}
+
+tests {
+  test("responde 200 o 501", function () {
+    expect([200, 501]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Con el token del entorno pasa la seguridad y el tenant. Hoy responde 501 (servicio en TODO).
+}

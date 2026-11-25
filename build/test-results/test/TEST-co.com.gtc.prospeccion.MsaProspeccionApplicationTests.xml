@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.MsaProspeccionApplicationTests" tests="1" skipped="1" failures="0" errors="0" timestamp="2026-11-25T13:56:44.574Z" hostname="DESKTOP-4TARBHR" time="0.0">
+  <properties/>
+  <testcase name="contextLoads()" classname="co.com.gtc.prospeccion.MsaProspeccionApplicationTests" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

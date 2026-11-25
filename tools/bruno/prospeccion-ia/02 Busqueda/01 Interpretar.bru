@@ -1,0 +1,28 @@
+meta {
+  name: Interpretar frase con Gemini
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/search/interpret
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "naturalQuery": "gerentes de TI de clínicas medianas en Bogotá"
+  }
+}
+
+tests {
+  test("responde 200 (filtros) o 400 (no dice a quién buscar)", function () {
+    expect([200, 400]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Tarea 3.2. Gemini convierte la frase en filtros de Apollo y el código los limpia. No gasta créditos de Apollo.
+  Si la frase no dice a quién buscar, responde 400 con lblSearchNotUnderstood.
+}

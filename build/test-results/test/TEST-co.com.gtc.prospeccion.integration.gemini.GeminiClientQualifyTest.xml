@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.integration.gemini.GeminiClientQualifyTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:47.849Z" hostname="DESKTOP-4TARBHR" time="0.038">
+  <properties/>
+  <testcase name="respuestaSinListaDeResultadosEsInvalida()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientQualifyTest" time="0.013"/>
+  <testcase name="perfilQueNoEsJsonNoSeEnvia()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientQualifyTest" time="0.002"/>
+  <testcase name="enviaReglasComoSistemaYDatosAparteConEsquemaJson()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientQualifyTest" time="0.012"/>
+  <testcase name="sinContactosNoLlamaAGemini()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientQualifyTest" time="0.002"/>
+  <testcase name="devuelveLosResultadosEnElOrdenDeLosContactosAunqueGeminiLosDesordene()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientQualifyTest" time="0.009"/>
+  <system-out><![CDATA[08:56:47.876 [Test worker] INFO co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini calificó 1 de 1 contactos en 4 ms (tokens: null de entrada, null de salida)
+08:56:47.887 [Test worker] INFO co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini calificó 2 de 3 contactos en 3 ms (tokens: null de entrada, null de salida)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

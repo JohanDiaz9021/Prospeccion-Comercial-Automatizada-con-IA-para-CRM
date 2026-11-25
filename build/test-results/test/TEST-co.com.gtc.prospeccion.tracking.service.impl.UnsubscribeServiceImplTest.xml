@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeServiceImplTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:50.943Z" hostname="DESKTOP-4TARBHR" time="0.007">
+  <properties/>
+  <testcase name="sinCorreoEnLaColaLoTomaDeLaEvidencia()" classname="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeServiceImplTest" time="0.003"/>
+  <testcase name="bloqueaRegistraElEventoYCancelaLosOtrosEnvios()" classname="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeServiceImplTest" time="0.001"/>
+  <testcase name="envioQueNoExisteNoHaceNada()" classname="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeServiceImplTest" time="0.001"/>
+  <testcase name="laPaginaSabeSiYaSeHabiaDadoDeBaja()" classname="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeServiceImplTest" time="0.001"/>
+  <testcase name="enmascarar()" classname="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeServiceImplTest" time="0.0"/>
+  <system-out><![CDATA[08:56:50.947 [Test worker] INFO co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeServiceImpl -- Baja por enlace del envío 41: correo bloqueado (0 envíos en cola cancelados)
+08:56:50.949 [Test worker] INFO co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeServiceImpl -- Baja por enlace del envío 41: correo bloqueado (1 envíos en cola cancelados)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

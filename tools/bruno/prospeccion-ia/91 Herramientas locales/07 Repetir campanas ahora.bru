@@ -1,0 +1,17 @@
+meta {
+  name: Repetir campañas ahora (job de las 6:00)
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/api/dev/search/run-scheduled?force=true
+  body: none
+  auth: inherit
+}
+
+docs {
+  Solo perfil local. force=true repite todas las campañas activas; force=false hace lo mismo que ScheduledSearchJob
+  (solo las que tocan hoy según su frecuencia). Siempre solo con personas nuevas.
+  Gasta créditos con los mismos topes.
+}

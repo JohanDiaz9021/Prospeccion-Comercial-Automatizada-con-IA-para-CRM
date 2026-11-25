@@ -1,0 +1,39 @@
+meta {
+  name: Guardar configuración
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/api/config
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": null,
+    "profileOfInterest": "{\"version\": 1}",
+    "baseMessage": "(pegar aquí el contenido de docs/negocio/mensaje-base.txt)",
+    "scoreThreshold": 60,
+    "dailySendLimit": 30,
+    "minSpacingSeconds": 120,
+    "companyLinkedinUrl": "https://www.linkedin.com/company/ejemplo"
+  }
+}
+
+tests {
+  test("responde 200 o 400 o 409", function () {
+    expect([200, 400, 409]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Cada guardado crea una versión nueva y apaga la anterior (historial en la_tenantconfig).
+  - id: el de la versión vigente que se está editando (GET /api/config). Null solo la primera vez.
+    Si otra persona guardó antes, responde 409 lblConflict.
+  - profileOfInterest: el contenido de docs/negocio/perfil-de-interes.json como texto (JSON válido).
+  - baseMessage: el de docs/negocio/mensaje-base.txt.
+  - Ninguno de los dos puede tener marcas [validar]: responde 400 lblPendingValidation.
+  - scoreThreshold de 0 a 100; companyLinkedinUrl debe empezar por https://.
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Enlace de baja de un borrador aprobado
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/api/dev/drafts/{{draftId}}/unsubscribe-link
+  body: none
+  auth: inherit
+}
+
+docs {
+  Solo perfil local. Devuelve la URL de baja del envío de un borrador aprobado (el token va en ?t=). Copie el valor
+  de t en la variable unsubscribeToken para usar la carpeta "06 Baja publica".
+}

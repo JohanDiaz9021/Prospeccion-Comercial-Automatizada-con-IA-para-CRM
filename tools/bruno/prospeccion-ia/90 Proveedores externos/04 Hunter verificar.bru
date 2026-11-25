@@ -1,0 +1,19 @@
+meta {
+  name: Hunter - Verificar correo (GASTA 1 verificación)
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://api.hunter.io/v2/email-verifier?email=contacto@example.com
+  body: none
+  auth: none
+}
+
+params:query {
+  email: contacto@example.com
+}
+
+headers {
+  X-API-KEY: {{hunterApiKey}}
+}

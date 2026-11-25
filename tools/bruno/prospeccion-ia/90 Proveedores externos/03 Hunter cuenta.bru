@@ -1,0 +1,25 @@
+meta {
+  name: Hunter - Créditos disponibles (gratis)
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://api.hunter.io/v2/account
+  body: none
+  auth: none
+}
+
+headers {
+  X-API-KEY: {{hunterApiKey}}
+}
+
+tests {
+  test("responde 200", function () {
+    expect([200]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  No consume créditos: muestra búsquedas y verificaciones restantes.
+}

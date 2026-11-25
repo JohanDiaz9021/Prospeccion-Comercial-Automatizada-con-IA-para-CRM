@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.sending.schedule.Ley2300CalendarTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:50.401Z" hostname="DESKTOP-4TARBHR" time="0.005">
+  <properties/>
+  <testcase name="siguienteVentana()" classname="co.com.gtc.prospeccion.sending.schedule.Ley2300CalendarTest" time="0.001"/>
+  <testcase name="sabadoDe8A15YDomingoNunca()" classname="co.com.gtc.prospeccion.sending.schedule.Ley2300CalendarTest" time="0.0"/>
+  <testcase name="seEvaluaEnHoraDeColombiaAunqueLlegueEnUtc()" classname="co.com.gtc.prospeccion.sending.schedule.Ley2300CalendarTest" time="0.0"/>
+  <testcase name="entreSemanaDe7A19ConElFinExcluido()" classname="co.com.gtc.prospeccion.sending.schedule.Ley2300CalendarTest" time="0.0"/>
+  <testcase name="ventanaMalConfiguradaNoArranca()" classname="co.com.gtc.prospeccion.sending.schedule.Ley2300CalendarTest" time="0.0"/>
+  <testcase name="festivoNuncaAunqueSeaDiaDeSemana()" classname="co.com.gtc.prospeccion.sending.schedule.Ley2300CalendarTest" time="0.0"/>
+  <testcase name="diasNoHabilesExtraordinariosPorConfiguracion()" classname="co.com.gtc.prospeccion.sending.schedule.Ley2300CalendarTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,29 @@
+meta {
+  name: Panel (embudo, tasas y pendientes)
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/dashboard
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~from: 2026-11-01
+  ~to: 2026-11-30
+  ~searchRunId: {{searchRunId}}
+}
+
+tests {
+  test("responde 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+}
+
+docs {
+  Tarea 6.1. Sin parámetros: el mes actual (hora de Colombia) y todas las búsquedas. Active from, to o searchRunId
+  para filtrar (una campaña incluye sus ejecuciones automáticas). El embudo es por cohorte: búsquedas creadas en el
+  periodo seguidas hasta hoy. Los pendientes son los de hoy. 400 si el periodo está al revés o pasa de un año.
+}

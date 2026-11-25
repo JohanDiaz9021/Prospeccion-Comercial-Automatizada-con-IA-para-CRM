@@ -1,0 +1,27 @@
+meta {
+  name: Crear borrador de prueba (DEMO)
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/dev/drafts/demo
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "firstName": "Laura",
+    "title": "Directora de Tecnología",
+    "organizationName": "Clínica Ficticia del Norte",
+    "industry": "hospital & health care",
+    "companySize": "250",
+    "city": "Bogota"
+  }
+}
+
+docs {
+  Solo perfil local. Crea un contacto [DEMO] INVENTADO en la base local con su evidencia y Gemini le redacta el
+  borrador (queda "Por revisar" en la bandeja). Solo datos inventados.
+}

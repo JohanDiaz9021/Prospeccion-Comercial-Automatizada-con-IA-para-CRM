@@ -1,0 +1,22 @@
+meta {
+  name: Avance de una búsqueda
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/api/search/runs/{{searchRunId}}
+  body: none
+  auth: inherit
+}
+
+tests {
+  test("responde 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+}
+
+docs {
+  Estado (1 Pendiente, 2 En curso, 3 Terminada, 4 Fallida), embudo y resultados por tipo (CREADO, DESCARTADO_IA,
+  SIN_CORREO, EXCLUIDO). La variable searchRunId la llena "03 Ejecutar".
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.multitenancy.DynamicTenantAwareRoutingDataSourceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:49.050Z" hostname="DESKTOP-4TARBHR" time="0.028">
+  <properties/>
+  <testcase name="cierraLosPoolsAlApagar()" classname="co.com.gtc.prospeccion.multitenancy.DynamicTenantAwareRoutingDataSourceTest" time="0.014"/>
+  <testcase name="sinTenantUsaElDataSourcePorDefectoDelPerfilLocal()" classname="co.com.gtc.prospeccion.multitenancy.DynamicTenantAwareRoutingDataSourceTest" time="0.008"/>
+  <testcase name="rechazaTenantNoHabilitado()" classname="co.com.gtc.prospeccion.multitenancy.DynamicTenantAwareRoutingDataSourceTest" time="0.003"/>
+  <testcase name="sinTenantNiDataSourcePorDefectoFalla()" classname="co.com.gtc.prospeccion.multitenancy.DynamicTenantAwareRoutingDataSourceTest" time="0.001"/>
+  <testcase name="creaElDataSourceDelTenantUnaSolaVez()" classname="co.com.gtc.prospeccion.multitenancy.DynamicTenantAwareRoutingDataSourceTest" time="0.0"/>
+  <system-out><![CDATA[08:56:49.063 [Test worker] INFO co.com.gtc.prospeccion.multitenancy.DynamicTenantAwareRoutingDataSource -- Creando el pool de conexiones del tenant tenant_a
+08:56:49.078 [Test worker] INFO co.com.gtc.prospeccion.multitenancy.DynamicTenantAwareRoutingDataSource -- Creando el pool de conexiones del tenant tenant_a
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

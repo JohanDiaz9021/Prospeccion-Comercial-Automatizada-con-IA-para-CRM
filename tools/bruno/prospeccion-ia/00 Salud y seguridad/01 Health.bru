@@ -1,0 +1,21 @@
+meta {
+  name: Health (sin token)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/actuator/health
+  body: none
+  auth: none
+}
+
+tests {
+  test("responde 200", function () {
+    expect([200]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Debe responder `{"status":"UP"}`. Por el gateway exige token (solo el health del gateway es público).
+}

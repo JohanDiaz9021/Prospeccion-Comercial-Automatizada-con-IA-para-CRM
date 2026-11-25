@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.sending.schedule.ColombianHolidaysTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:50.398Z" hostname="DESKTOP-4TARBHR" time="0.002">
+  <properties/>
+  <testcase name="losTrasladablesSeCorrenAlLunesYLosFijosNo()" classname="co.com.gtc.prospeccion.sending.schedule.ColombianHolidaysTest" time="0.001"/>
+  <testcase name="jueves24DeDiciembreNoEsFestivo()" classname="co.com.gtc.prospeccion.sending.schedule.ColombianHolidaysTest" time="0.0"/>
+  <testcase name="losFestivosDe2026SonLos18DelCalendarioOficial()" classname="co.com.gtc.prospeccion.sending.schedule.ColombianHolidaysTest" time="0.001"/>
+  <testcase name="domingoDePascua()" classname="co.com.gtc.prospeccion.sending.schedule.ColombianHolidaysTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

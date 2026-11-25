@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.integration.mailbox.MimeEmailsTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:48.061Z" hostname="DESKTOP-4TARBHR" time="0.083">
+  <properties/>
+  <testcase name="unaRespuestaSoloEnHtmlSePasaATexto()" classname="co.com.gtc.prospeccion.integration.mailbox.MimeEmailsTest" time="0.008"/>
+  <testcase name="sinRemitenteDestinatarioOMessageIdNoSeArma()" classname="co.com.gtc.prospeccion.integration.mailbox.MimeEmailsTest" time="0.01"/>
+  <testcase name="unReboteDeGmailTraeElReporteYElCorreoOriginal()" classname="co.com.gtc.prospeccion.integration.mailbox.MimeEmailsTest" time="0.01"/>
+  <testcase name="unaQuejaArfSeReconoce()" classname="co.com.gtc.prospeccion.integration.mailbox.MimeEmailsTest" time="0.01"/>
+  <testcase name="loQueSaleSeLeeIgualDeVuelta()" classname="co.com.gtc.prospeccion.integration.mailbox.MimeEmailsTest" time="0.021"/>
+  <testcase name="loQueNoEsMimeNoRompeConUnErrorRaro()" classname="co.com.gtc.prospeccion.integration.mailbox.MimeEmailsTest" time="0.004"/>
+  <testcase name="elCorreoQueSaleLlevaNuestroMessageIdYLaBajaDeUnClic()" classname="co.com.gtc.prospeccion.integration.mailbox.MimeEmailsTest" time="0.008"/>
+  <testcase name="unaRespuestaDeOutlookEnQuotedPrintableSeReconoce()" classname="co.com.gtc.prospeccion.integration.mailbox.MimeEmailsTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

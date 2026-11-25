@@ -1,0 +1,23 @@
+meta {
+  name: Simular mensaje del buzón
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl}}/api/dev/mailbox/drafts/{{draftId}}/simulate
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "kind": "REPLY"
+  }
+}
+
+docs {
+  Solo perfil local (tarea 5.4). kind: REPLY, UNSUBSCRIBE_REQUEST, AUTO_REPLY, SOFT_BOUNCE, HARD_BOUNCE o COMPLAINT.
+  Arma el mensaje como lo entregarían Gmail u Outlook y lo procesa con el mismo código que leerá el buzón. Responde
+  qué pasó (respuestas, bajas, rebotes, quejas, automáticas, ya procesados). 409 si el correo no se ha enviado.
+}

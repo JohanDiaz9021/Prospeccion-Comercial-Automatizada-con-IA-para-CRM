@@ -1,0 +1,21 @@
+meta {
+  name: Token mal firmado -> 401
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/config
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.firma-falsa
+}
+
+tests {
+  test("responde 401", function () {
+    expect([401]).to.include(res.getStatus());
+  });
+}

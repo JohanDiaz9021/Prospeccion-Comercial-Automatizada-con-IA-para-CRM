@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "company": {
+    "name": "GTC",
+    "description": "Empresa colombiana de servicios tecnológicos.",
+    "valueProposition": "Ayudamos a empresas medianas colombianas a conectar sus sistemas y automatizar procesos manuales para que operen más rápido y con menos errores.",
+    "services": [
+      {
+        "name": "Desarrollo de software a la medida",
+        "solves": "Procesos manuales, hojas de cálculo y sistemas que no se hablan entre sí.",
+        "bestFor": "Gerencias de operaciones y de TI."
+      },
+      {
+        "name": "Integración con ERP y CRM (SAP, Salesforce, Microsoft Dynamics)",
+        "solves": "Datos duplicados, reportes lentos, información en varios sistemas.",
+        "bestFor": "Direcciones de TI y financieras."
+      },
+      {
+        "name": "Automatización e inteligencia artificial",
+        "solves": "Tareas repetitivas y atención al cliente lenta.",
+        "bestFor": "Gerencia general, operaciones y servicio al cliente."
+      },
+      {
+        "name": "Soporte y mantenimiento de plataformas",
+        "solves": "Caídas, sistemas sin dueño, equipo interno pequeño.",
+        "bestFor": "Empresas sin un área de TI grande."
+      }
+    ]
+  },
+  "titles": {
+    "high": {
+      "seniorities": ["owner", "founder", "c_suite", "partner", "vp", "director"],
+      "titles": [
+        "Gerente General", "Presidente", "Director General", "Director Ejecutivo",
+        "Fundador", "Cofundador", "Propietario",
+        "Director de Tecnología", "Director de TI", "Director de Sistemas",
+        "Director de Transformación Digital", "Director de Operaciones",
+        "Director Financiero", "Director Administrativo y Financiero",
+        "Gerente de Tecnología", "Gerente de TI", "Gerente de Sistemas",
+        "Gerente de Transformación Digital",
+        "CEO", "General Manager", "Managing Director", "Founder", "Co-Founder", "Owner",
+        "CIO", "CTO", "COO", "CFO",
+        "IT Director", "Technology Director", "Digital Transformation Director",
+        "Operations Director", "IT Manager", "Technology Manager"
+      ]
+    },
+    "medium": {
+      "seniorities": ["head", "manager"],
+      "titles": [
+        "Gerente de Operaciones", "Gerente Administrativo", "Gerente Financiero",
+        "Gerente Administrativo y Financiero", "Gerente de Logística",
+        "Gerente de Servicio al Cliente", "Gerente de Proyectos", "Director de Proyectos",
+        "Jefe de Tecnología", "Jefe de TI", "Jefe de Sistemas",
+        "Operations Manager", "Finance Manager", "Logistics Manager",
+        "Customer Service Manager", "PMO Director",
+        "Head of IT", "Head of Technology", "Head of Operations"
+      ]
+    },
+    "low": {
+      "seniorities": ["senior"],
+      "titles": [
+        "Coordinador de TI", "Coordinador de Sistemas", "Líder de Tecnología",
+        "Líder de Proyectos", "Arquitecto de Soluciones", "Jefe de Infraestructura",
+        "IT Coordinator", "IT Lead", "Tech Lead", "Solutions Architect",
+        "Infrastructure Manager", "Project Manager"
+      ]
+    },
+    "excluded": {
+      "seniorities": ["entry", "intern"],
+      "titles": [
+        "Analista", "Asistente", "Auxiliar", "Practicante", "Pasante",
+        "Ejecutivo de Ventas", "Asesor Comercial", "Reclutador",
+        "Analyst", "Assistant", "Intern", "Sales Executive", "Account Executive", "Recruiter"
+      ]
+    }
+  },
+  "sectors": {
+    "high": [
+      {
+        "name": "Salud (clínicas, IPS, laboratorios)",
+        "apolloIndustries": ["hospital & health care", "medical practice", "medical devices"]
+      },
+      {
+        "name": "Retail y comercio",
+        "apolloIndustries": ["retail", "consumer goods", "supermarkets", "wholesale"]
+      },
+      {
+        "name": "Logística y transporte",
+        "apolloIndustries": ["logistics & supply chain", "transportation/trucking/railroad", "warehousing", "package/freight delivery"]
+      }
+    ],
+    "medium": [
+      {
+        "name": "Manufactura",
+        "apolloIndustries": ["machinery", "mechanical or industrial engineering", "food production", "food & beverages", "plastics", "textiles"]
+      },
+      {
+        "name": "Servicios financieros no bancarios (cooperativas, fintech, seguros)",
+        "apolloIndustries": ["financial services", "insurance"]
+      },
+      {
+        "name": "Educación privada",
+        "apolloIndustries": ["education management", "higher education"]
+      },
+      {
+        "name": "Construcción",
+        "apolloIndustries": ["construction", "building materials", "real estate"]
+      },
+      {
+        "name": "Agroindustria",
+        "apolloIndustries": ["farming", "dairy"]
+      }
+    ],
+    "low": [
+      {
+        "name": "Servicios profesionales, medios y turismo",
+        "apolloIndustries": ["professional training & coaching", "accounting", "law practice", "marketing & advertising", "hospitality", "leisure, travel & tourism"]
+      }
+    ],
+    "excluded": [
+      {
+        "name": "Empresas de software y consultoras de TI (competencia)",
+        "apolloIndustries": ["computer software", "information technology & services"]
+      },
+      {
+        "name": "Sector público",
+        "apolloIndustries": ["government administration"]
+      },
+      {
+        "name": "Bancos grandes con TI propia",
+        "apolloIndustries": ["banking"]
+      }
+    ]
+  },
+  "companySizes": {
+    "high": ["51,200", "201,500"],
+    "medium": ["501,1000"],
+    "low": ["11,50", "1001,5000"],
+    "excluded": ["1,10", "5001,10000", "10001,"]
+  },
+  "locations": {
+    "high": ["Bogota, Colombia", "Medellin, Colombia"],
+    "medium": ["Cali, Colombia", "Barranquilla, Colombia", "Bucaramanga, Colombia"],
+    "low": ["Colombia"],
+    "excluded": ["Fuera de Colombia"]
+  },
+  "positiveSignals": [
+    "La empresa usa tecnologías con las que trabajamos: SAP, Salesforce, Microsoft Dynamics, Oracle.",
+    "Crecimiento reciente: nuevas sedes, expansión a otras ciudades o contratación de personal de TI.",
+    "La persona lleva menos de 12 meses en el cargo.",
+    "El cargo tiene responsabilidad explícita sobre tecnología, transformación digital u operaciones."
+  ],
+  "negativeSignals": [
+    "Datos incompletos: sin empresa, sin cargo claro o sin ubicación.",
+    "Cargo ambiguo o sin relación con decisiones de tecnología.",
+    "La empresa es filial de un grupo extranjero que decide la tecnología desde el exterior.",
+    "Sector o tamaño de prioridad baja."
+  ],
+  "scoring": {
+    "criteria": [
+      { "key": "title", "label": "Cargo y nivel de decisión", "maxPoints": 30, "high": [25, 30], "medium": [15, 24], "low": [5, 14], "missingPoints": 7 },
+      { "key": "sector", "label": "Sector", "maxPoints": 20, "high": [17, 20], "medium": [10, 16], "low": [3, 9], "missingPoints": 5 },
+      { "key": "companySize", "label": "Tamaño de empresa", "maxPoints": 20, "high": [17, 20], "medium": [10, 16], "low": [3, 9], "missingPoints": 5 },
+      { "key": "location", "label": "Ubicación", "maxPoints": 10, "high": [9, 10], "medium": [5, 8], "low": [1, 4], "missingPoints": 2 },
+      { "key": "signals", "label": "Señales de necesidad", "maxPoints": 20, "high": [15, 20], "medium": [8, 14], "low": [1, 7], "missingPoints": 4 }
+    ],
+    "excludedPoints": 0,
+    "maxPenalty": 15,
+    "categories": [
+      { "code": "A", "label": "Excelente", "min": 80, "max": 100 },
+      { "code": "B", "label": "Bueno", "min": 60, "max": 79 },
+      { "code": "C", "label": "Dudoso", "min": 40, "max": 59 },
+      { "code": "D", "label": "No encaja", "min": 0, "max": 39 }
+    ]
+  },
+  "exclusions": {
+    "competitorDomains": [],
+    "excludedCompanyDomains": [],
+    "freeEmailDomains": ["gmail.com", "hotmail.com", "outlook.com", "live.com", "yahoo.com", "icloud.com", "aol.com"],
+    "recontactAfterDays": 90
+  }
+}

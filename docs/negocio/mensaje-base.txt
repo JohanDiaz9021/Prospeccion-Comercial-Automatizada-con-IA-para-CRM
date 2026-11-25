@@ -1,0 +1,19 @@
+ASUNTO: {{empresa}}: menos procesos manuales, sistemas conectados
+
+Buenos días, {{nombre}}:
+
+[[PERSONALIZAR: una o dos frases que conecten el cargo de {{nombre}} y el sector de {{empresa}} con el problema que resuelve el servicio más relevante del perfil. Solo con los datos del contacto.]]
+
+En GTC ayudamos a empresas medianas colombianas a conectar sus sistemas y automatizar procesos manuales para que operen más rápido y con menos errores. Por ejemplo:
+
+- Integramos el ERP, el CRM y la facturación para que la información esté en un solo lugar.
+- Automatizamos tareas repetitivas con software a la medida e inteligencia artificial.
+- Damos soporte y mantenimiento a plataformas críticas cuando el equipo interno no da abasto.
+
+[[PERSONALIZAR: si un servicio encaja claramente mejor con el contacto, ponerlo primero en la lista o mencionarlo en una frase. Si no, dejar la lista igual.]]
+
+¿Le parece si conversamos 20 minutos la próxima semana para ver si algo de esto le sirve a {{empresa}}?
+
+Cordialmente,
+
+Equipo Comercial GTC

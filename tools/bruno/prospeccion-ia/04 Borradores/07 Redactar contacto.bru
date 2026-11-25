@@ -1,0 +1,26 @@
+meta {
+  name: Redactar borrador de un contacto
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/api/drafts/contacts/{{contactId}}/generate
+  body: none
+  auth: inherit
+}
+
+tests {
+  test("responde 200, 400, 404, 409 o 502", function () {
+    expect([200, 400, 404, 409, 502]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Tarea 4.3. Redacta con Gemini una versión nueva del borrador del contacto (pm_leafletcontact.ID) y la deja
+  "Por revisar" (601/1). Usa solo la evidencia del contacto (la_evidence) y el mensaje base vigente.
+  - Respuesta: id, version, statusCode, subject, body, bodyText, words, warnings, model, promptVersion.
+  - 404: el contacto no tiene evidencia. 409 lblDraftAlreadyApproved: ya tiene una versión aprobada.
+  - 400 lblBaseMessageMissing o lblDraftNotValid. 502: Gemini no respondió.
+  Variable contactId en el entorno (local y local-gateway).
+}

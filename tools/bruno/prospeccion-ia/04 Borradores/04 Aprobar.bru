@@ -1,0 +1,17 @@
+meta {
+  name: Aprobar (encola el envío)
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/drafts/{{draftId}}/approve
+  body: none
+  auth: inherit
+}
+
+tests {
+  test("responde 200 o 403 o 404 o 501", function () {
+    expect([200, 403, 404, 501]).to.include(res.getStatus());
+  });
+}

@@ -1,0 +1,21 @@
+meta {
+  name: Resultados por persona
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/api/search/runs/{{searchRunId}}/results
+  body: none
+  auth: inherit
+}
+
+tests {
+  test("responde 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+}
+
+docs {
+  Qué pasó con cada persona nueva. De quien no se contacta solo se guarda el resultado y el puntaje.
+}

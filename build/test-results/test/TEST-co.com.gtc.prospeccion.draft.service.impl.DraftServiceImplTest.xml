@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:47.460Z" hostname="DESKTOP-4TARBHR" time="0.098">
+  <properties/>
+  <testcase name="siLasDosRedaccionesFallanNoGuardaNada()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.024"/>
+  <testcase name="losAvisosLleganAQuienRevisa()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.006"/>
+  <testcase name="laPruebaSinMensajeEnNingunLadoFalla()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.003"/>
+  <testcase name="siYaHayUnaVersionAprobadaNoSeRedactaOtra()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.003"/>
+  <testcase name="sinEvidenciaNoHayQueRedactar()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.002"/>
+  <testcase name="laPruebaUsaElMensajePropioYNoGuarda()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.007"/>
+  <testcase name="geminiSoloVeLosDatosConEvidenciaYGanaApollo()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.005"/>
+  <testcase name="guardaUnaVersionNuevaPendienteConElHtmlLimpio()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.005"/>
+  <testcase name="sinMensajeBaseNoLlamaAGemini()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.002"/>
+  <testcase name="siGeminiBloqueaNoReintentaNiGuarda()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.004"/>
+  <testcase name="noSeRedactaParaQuienSeDioDeBaja()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.003"/>
+  <testcase name="laPruebaSinMensajePropioUsaElDeLaConfiguracion()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.005"/>
+  <testcase name="siQuedanMarcasSinLlenarPideOtraRedaccion()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.005"/>
+  <testcase name="dosRedaccionesALaVezDanConflicto()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.006"/>
+  <testcase name="unaRespuestaInvalidaTambienSeReintenta()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftServiceImplTest" time="0.005"/>
+  <system-out><![CDATA[08:56:47.480 [Test worker] WARN co.com.gtc.prospeccion.draft.service.impl.DraftServiceImpl -- El borrador de Gemini no cumple las reglas (intento 1 de 2): [SIGNATURE_MISSING]
+08:56:47.484 [Test worker] WARN co.com.gtc.prospeccion.draft.service.impl.DraftServiceImpl -- El borrador de Gemini no cumple las reglas (intento 2 de 2): [SIGNATURE_MISSING]
+08:56:47.491 [Test worker] INFO co.com.gtc.prospeccion.draft.service.impl.DraftServiceImpl -- Borrador v1 del contacto 900 redactado (130 palabras, avisos: [NUMBER_NOT_IN_DATA])
+08:56:47.507 [Test worker] INFO co.com.gtc.prospeccion.draft.service.impl.DraftServiceImpl -- Prueba de redacción: 127 palabras, avisos: [NUMBER_NOT_IN_DATA]
+08:56:47.516 [Test worker] INFO co.com.gtc.prospeccion.draft.service.impl.DraftServiceImpl -- Borrador v1 del contacto 900 redactado (127 palabras, avisos: [])
+08:56:47.521 [Test worker] INFO co.com.gtc.prospeccion.draft.service.impl.DraftServiceImpl -- Borrador v3 del contacto 900 redactado (127 palabras, avisos: [])
+08:56:47.539 [Test worker] INFO co.com.gtc.prospeccion.draft.service.impl.DraftServiceImpl -- Prueba de redacción: 127 palabras, avisos: []
+08:56:47.544 [Test worker] WARN co.com.gtc.prospeccion.draft.service.impl.DraftServiceImpl -- El borrador de Gemini no cumple las reglas (intento 1 de 2): [MARKS_LEFT]
+08:56:47.545 [Test worker] INFO co.com.gtc.prospeccion.draft.service.impl.DraftServiceImpl -- Borrador v1 del contacto 900 redactado (127 palabras, avisos: [])
+08:56:47.556 [Test worker] WARN co.com.gtc.prospeccion.draft.service.impl.DraftServiceImpl -- Gemini respondió un borrador inválido (intento 1 de 2)
+08:56:47.558 [Test worker] INFO co.com.gtc.prospeccion.draft.service.impl.DraftServiceImpl -- Borrador v1 del contacto 900 redactado (127 palabras, avisos: [])
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

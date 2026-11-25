@@ -1,0 +1,27 @@
+meta {
+  name: Borradores por revisar
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/drafts?status=1&page=0&size=20
+  body: none
+  auth: inherit
+}
+
+params:query {
+  status: 1
+  page: 0
+  size: 20
+}
+
+tests {
+  test("responde 200 o 501", function () {
+    expect([200, 501]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  status = CODE del catálogo 601 (1 Por revisar, 2 Aprobado, 3 Descartado, 4 Vencido).
+}

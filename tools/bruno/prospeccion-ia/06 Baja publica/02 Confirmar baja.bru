@@ -1,0 +1,30 @@
+meta {
+  name: Confirmar baja (un clic)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/public/unsubscribe?t={{unsubscribeToken}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  t: {{unsubscribeToken}}
+}
+
+body:form-urlencoded {
+  List-Unsubscribe: One-Click
+}
+
+tests {
+  test("responde 200 (baja hecha) o 400 (enlace no válido)", function () {
+    expect([200, 400]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Tarea 5.5. Lo mismo que hace Gmail u Outlook con la baja en un clic (RFC 8058) y el botón de la página: bloquea el
+  correo para siempre, registra el evento de baja y cancela sus otros envíos en cola. Repetirlo no hace nada nuevo.
+}

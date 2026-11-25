@@ -1,0 +1,25 @@
+meta {
+  name: Correo solo con Hunter (GASTA CRÉDITOS)
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/dev/email-discovery/hunter
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "domain": "empresa.com"
+  }
+}
+
+docs {
+  Solo perfil local. Tramo de Hunter de la 4.1 (Email Finder y, si hace falta, Email Verifier) sin pasar por Apollo,
+  con las mismas reglas de aceptación y los mismos topes de créditos (4.2). Gasta 1 búsqueda si encuentra el correo y
+  0,5 si hay que verificarlo. El dominio se limpia solo (sin https ni www).
+}

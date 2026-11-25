@@ -1,0 +1,22 @@
+meta {
+  name: Historial de versiones
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/api/drafts/contacts/{{contactId}}/versions
+  body: none
+  auth: inherit
+}
+
+tests {
+  test("responde 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+}
+
+docs {
+  Tarea 5.1. Todas las versiones del borrador de un contacto, la más nueva primero (las de Gemini y las editadas por
+  una persona). Solo la última se puede editar, descartar o aprobar.
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.common.util.DateTableResolverTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:46.079Z" hostname="DESKTOP-4TARBHR" time="0.013">
+  <properties/>
+  <testcase name="siElCalendarioNoTieneLaFechaFallaConUnMensajeClaro()" classname="co.com.gtc.prospeccion.common.util.DateTableResolverTest" time="0.011"/>
+  <testcase name="usaLaFechaDeColombiaNoLaDeUtc()" classname="co.com.gtc.prospeccion.common.util.DateTableResolverTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

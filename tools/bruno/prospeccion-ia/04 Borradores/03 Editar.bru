@@ -1,0 +1,29 @@
+meta {
+  name: Editar borrador
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/api/drafts/{{draftId}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "subject": "Clínica Ejemplo: menos procesos manuales",
+    "body": "<p>Buenos días, Laura:</p>",
+    "version": "{{draftVersion}}"
+  }
+}
+
+tests {
+  test("responde 200 o 400 o 404 o 501", function () {
+    expect([200, 400, 404, 501]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  El HTML se sanitiza antes de guardarse. version evita pisar cambios de otra persona.
+}

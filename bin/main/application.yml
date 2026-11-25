@@ -1,0 +1,223 @@
+# =====================================================================
+# msa-prospeccion-crm - configuración común a todos los perfiles.
+# Todo valor de entorno o sensible llega por variables (${...}); ver .env.example.
+# Las llaves de Apollo, Hunter y Gemini viven en AWS SSM: aquí solo va el NOMBRE del parámetro.
+# =====================================================================
+spring:
+  application:
+    name: msa-prospeccion-crm
+  jpa:
+    open-in-view: false
+    hibernate:
+      # Hibernate NUNCA crea ni altera tablas: las del CRM no son de este servicio
+      # y las la_* se crean por script (db/scripts).
+      ddl-auto: none
+      naming:
+        # Usa los nombres de @Table/@Column tal cual (convención del CRM).
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  cloud:
+    openfeign:
+      client:
+        config:
+          # Equivale a feign.client.config.default (prefijo de Spring Cloud 2023.x).
+          default:
+            connect-timeout: ${FEIGN_CONNECT_TIMEOUT_MS:5000}
+            read-timeout: ${FEIGN_READ_TIMEOUT_MS:15000}
+  data:
+    web:
+      pageable:
+        serialization-mode: via-dto
+  task:
+    scheduling:
+      pool:
+        size: 4
+  messages:
+    basename: messages
+    encoding: UTF-8
+
+server:
+  # Puerto por asignar por el equipo del CRM.
+  port: ${SERVER_PORT}
+  shutdown: graceful
+  servlet:
+    # Igual que los demás servicios del CRM: el gateway enruta /msa-prospeccion/** sin recortar el prefijo.
+    context-path: ${SERVER_SERVLET_CONTEXT_PATH:/msa-prospeccion}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}
+  instance:
+    prefer-ip-address: true
+
+aws:
+  ssm:
+    region: ${AWS_REGION}
+    # Credenciales por tenant: <tenant-base-path><tenant>/url|username|password|driverclass
+    tenant-base-path: ${AWS_SSM_TENANT_BASE_PATH}
+
+prospeccion:
+  # Lista separada por comas de los tenants (db_code) donde corre el robot.
+  tenants-enabled: ${PROSPECCION_TENANTS_ENABLED:}
+  timezone: America/Bogota
+  # Ley 2300: L-V 7:00-19:00, sáb 8:00-15:00, hora de Colombia, sin domingos ni festivos.
+  ley2300:
+    weekdays:
+      start: "07:00"
+      end: "19:00"
+    saturday:
+      start: "08:00"
+      end: "15:00"
+    sundays-allowed: false
+    holidays-allowed: false
+  mailbox:
+    # gmail | graph | smtp | none. smtp = Mailpit en local (5.2); gmail o graph cuando TI decida.
+    provider: ${MAILBOX_PROVIDER:none}
+    # 5.4: cada lectura repasa lo que llegó en estas horas; cada mensaje se procesa una sola vez.
+    lookback-hours: ${MAILBOX_LOOKBACK_HOURS:48}
+    # 5.2: buzón que envía (su dominio va en el Message-ID) y nombre que ve el destinatario.
+    from-address: ${MAILBOX_FROM_ADDRESS:}
+    from-name: ${MAILBOX_FROM_NAME:Equipo Comercial GTC}
+    # Reintentos: un error temporal se reintenta a los 15, 30... minutos; uno permanente no se reintenta.
+    max-attempts: ${MAILBOX_MAX_ATTEMPTS:3}
+    retry-minutes: ${MAILBOX_RETRY_MINUTES:15}
+    max-per-run: ${MAILBOX_MAX_PER_RUN:10}
+    smtp:
+      host: ${SMTP_HOST:}
+      port: ${SMTP_PORT:1025}
+      username: ${SMTP_USERNAME:}
+      password: ${SMTP_PASSWORD:}
+      starttls: ${SMTP_STARTTLS:false}
+      # Por seguridad solo se acepta un servidor local (Mailpit). Otro servidor exige true a propósito.
+      allow-remote-host: ${SMTP_ALLOW_REMOTE_HOST:false}
+      mailpit-api-url: ${MAILPIT_API_URL:}
+  # 5.6: quien responde pasa al vendedor (quien aprobó el correo) con una tarea en el CRM sobre su prospecto.
+  # CODE de los catálogos del CRM: 246 tipo (obligatorio), 247 prioridad y 248 periodicidad (vacío = no se envía).
+  handoff:
+    enabled: ${HANDOFF_ENABLED:true}
+    task-type-code: ${HANDOFF_TASK_TYPE_CODE:1}
+    priority-code: ${HANDOFF_PRIORITY_CODE:}
+    periodicity-code: ${HANDOFF_PERIODICITY_CODE:}
+    due-business-days: ${HANDOFF_DUE_BUSINESS_DAYS:1}
+    due-hour: "${HANDOFF_DUE_HOUR:10:00}"
+  # Pie legal de cada correo (1.10, docs/negocio/mensaje-base.md). Sin NIT, dirección o política no se envía nada.
+  legal:
+    company-name: ${LEGAL_COMPANY_NAME:GTC Corporation}
+    nit: ${LEGAL_NIT:}
+    address: ${LEGAL_ADDRESS:}
+    privacy-policy-url: ${LEGAL_PRIVACY_POLICY_URL:}
+  # Seguimiento (5.4): rebotes temporales antes de bloquear la dirección y píxel de apertura (apagado: dato aproximado
+  # que requiere el visto bueno de Jurídica y abrir /msa-prospeccion/public/open en el gateway).
+  tracking:
+    soft-bounce-limit: ${TRACKING_SOFT_BOUNCE_LIMIT:3}
+    open-pixel:
+      enabled: ${OPEN_PIXEL_ENABLED:false}
+      base-url: ${OPEN_PIXEL_BASE_URL:}
+  # Topes de créditos por tenant (tarea 4.2, docs/negocio/creditos.md). 0 = sin tope. Ajustar al plan contratado.
+  credits:
+    alert-percent: ${CREDITS_ALERT_PERCENT:80}
+    apollo:
+      monthly-budget: ${APOLLO_MONTHLY_CREDITS:1000}
+      per-search-run: ${APOLLO_CREDITS_PER_SEARCH:50}
+      unit-cost-usd: ${APOLLO_CREDIT_COST_USD:}
+    hunter:
+      monthly-budget: ${HUNTER_MONTHLY_CREDITS:500}
+      per-search-run: ${HUNTER_CREDITS_PER_SEARCH:50}
+      unit-cost-usd: ${HUNTER_CREDIT_COST_USD:}
+  # Reglas para aceptar un correo (tarea 4.1, docs/negocio/correo-de-contacto.md).
+  email-discovery:
+    trust-apollo-verified: ${EMAIL_TRUST_APOLLO_VERIFIED:true}
+    accepted-hunter-statuses: ${EMAIL_ACCEPTED_HUNTER_STATUSES:valid,accept_all}
+    min-finder-score: ${EMAIL_MIN_FINDER_SCORE:80}
+  # Búsqueda y campañas (3.2): personas nuevas por ejecución (techo del gasto de créditos) y páginas de Apollo.
+  search:
+    max-new-per-run: ${SEARCH_MAX_NEW_PER_RUN:25}
+    max-pages: ${SEARCH_MAX_PAGES:5}
+  unsubscribe:
+    base-url: ${UNSUBSCRIBE_BASE_URL}
+    token-secret-ssm-parameter: ${UNSUBSCRIBE_TOKEN_SECRET_SSM_PARAMETER}
+    # Solo para local: el secreto directo. En qa/prod va vacío y se lee de SSM.
+    token-secret: ${UNSUBSCRIBE_TOKEN_SECRET:}
+  # Crons de ejemplo (segundo minuto hora día mes día-semana), evaluados en prospeccion.timezone.
+  jobs:
+    scheduled-search:
+      enabled: ${PROSPECCION_JOBS_ENABLED:false}
+      # Cada día hábil a las 6:00; cada campaña decide si le toca (diaria o semanal).
+      cron: ${SCHEDULED_SEARCH_CRON:0 0 6 * * MON-FRI}
+    send-dispatcher:
+      enabled: ${PROSPECCION_JOBS_ENABLED:false}
+      # Cada minuto en horario hábil (envía cuando ya pasó el espaciado); SendGuardService aplica la ventana exacta de
+      # la Ley 2300.
+      cron: "0 * 7-18 * * MON-SAT"
+    mailbox-sync:
+      enabled: ${PROSPECCION_JOBS_ENABLED:false}
+      cron: "0 */15 * * * *"
+    maintenance:
+      enabled: ${PROSPECCION_JOBS_ENABLED:false}
+      cron: "0 30 2 * * *"
+  local-tenant:
+    enabled: false
+  security:
+    # Clave HMAC en Base64 con la que el CRM firma el JWT: la misma JWT_SECRET_KEY de msa-apigateway-crm.
+    jwt-secret: ${JWT_SECRET_KEY}
+    # 2.9: operaciones del módulo por rol del token (VER, EJECUTAR, APROBAR, CONFIGURAR). ROLE_SUPERADMIN tiene todas y
+    # un rol que no esté aquí no tiene ninguna. Por variable de entorno, por ejemplo:
+    #   PROSPECCION_SECURITY_OPERATIONSBYROLE_COMERCIAL=VER,APROBAR
+    # Se reemplaza por el permission-service de Sueco cuando la 1.13 entregue el assignmentId del menú.
+    operations-by-role: {}
+  # Un pool de conexiones por base de tenant, creado la primera vez que se usa.
+  tenant-pool:
+    maximum-pool-size: ${TENANT_POOL_MAX_SIZE:5}
+    minimum-idle: 1
+
+integrations:
+  apollo:
+    base-url: ${APOLLO_BASE_URL:https://api.apollo.io/api/v1}
+    api-key-ssm-parameter: ${APOLLO_API_KEY_SSM_PARAMETER}
+    # Solo desarrollo local; en qa/prod se deja vacía y la llave sale de SSM.
+    api-key: ${APOLLO_API_KEY:}
+    max-retries: ${APOLLO_MAX_RETRIES:3}
+    connect-timeout: 5s
+    read-timeout: 30s
+  hunter:
+    base-url: ${HUNTER_BASE_URL:https://api.hunter.io/v2}
+    api-key-ssm-parameter: ${HUNTER_API_KEY_SSM_PARAMETER}
+    api-key: ${HUNTER_API_KEY:}
+    connect-timeout: 5s
+    read-timeout: 30s
+  gemini:
+    base-url: ${GEMINI_BASE_URL:https://generativelanguage.googleapis.com/v1beta}
+    api-key-ssm-parameter: ${GEMINI_API_KEY_SSM_PARAMETER}
+    # Solo desarrollo local; en qa/prod se deja vacía y la llave sale de SSM.
+    api-key: ${GEMINI_API_KEY:}
+    model: ${GEMINI_MODEL:gemini-2.5-flash}
+    max-retries: ${GEMINI_MAX_RETRIES:3}
+    # Contactos por llamada al calificar (3.5). Con 10, una búsqueda de 100 personas son 10 llamadas.
+    qualification-batch-size: ${GEMINI_QUALIFICATION_BATCH_SIZE:10}
+    connect-timeout: 5s
+    read-timeout: 60s
+
+management:
+  health:
+    db:
+      # No hay una base única: cada tenant tiene la suya y el DataSource exige un tenant fijado.
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
+
+logging:
+  # PROHIBIDO registrar correos completos, llaves API, tokens JWT, contraseñas o cuerpos de correo.
+  # Para identificar a alguien en un log, usar el ID interno (pm_leafletcontact) o el correo enmascarado.
+  level:
+    root: INFO

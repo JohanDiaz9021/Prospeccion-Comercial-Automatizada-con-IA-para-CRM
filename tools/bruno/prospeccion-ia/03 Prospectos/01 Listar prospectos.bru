@@ -1,0 +1,24 @@
+meta {
+  name: Prospectos de una búsqueda
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/prospects?searchRunId={{searchRunId}}&minScore=60&page=0&size=20
+  body: none
+  auth: inherit
+}
+
+params:query {
+  searchRunId: {{searchRunId}}
+  minScore: 60
+  page: 0
+  size: 20
+}
+
+tests {
+  test("responde 200 o 501", function () {
+    expect([200, 501]).to.include(res.getStatus());
+  });
+}

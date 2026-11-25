@@ -1,0 +1,28 @@
+meta {
+  name: Pausar o activar la campaña
+  type: http
+  seq: 7
+}
+
+patch {
+  url: {{baseUrl}}/api/search/runs/{{searchRunId}}/schedule
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "scheduled": false,
+    "frequency": null
+  }
+}
+
+tests {
+  test("responde 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+}
+
+docs {
+  false = pausa la campaña; true = la activa. frequency (DAILY o WEEKLY) es opcional: null conserva la que tenía. Una ejecución automática (con campaña de origen) no puede ser campaña.
+}

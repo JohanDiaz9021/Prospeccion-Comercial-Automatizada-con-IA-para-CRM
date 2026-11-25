@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.draft.service.impl.DraftInboxTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:47.322Z" hostname="DESKTOP-4TARBHR" time="0.135">
+  <properties/>
+  <testcase name="editarCreaLaVersionSiguienteConElHtmlLimpio()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftInboxTest" time="0.108"/>
+  <testcase name="marcasSinLlenarNoSeGuardan()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftInboxTest" time="0.004"/>
+  <testcase name="sinCambiosNoCreaOtraVersion()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftInboxTest" time="0.003"/>
+  <testcase name="laBandejaPaginaYCompletaLosDatos()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftInboxTest" time="0.005"/>
+  <testcase name="editarUnaVersionVistaViejaEsConflicto()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftInboxTest" time="0.002"/>
+  <testcase name="elHistorialTraeTodasLasVersiones()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftInboxTest" time="0.002"/>
+  <testcase name="descartarGuardaElMotivoYQuienLoHizo()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftInboxTest" time="0.005"/>
+  <testcase name="soloSeEditaLaUltimaVersionPorRevisar()" classname="co.com.gtc.prospeccion.draft.service.impl.DraftInboxTest" time="0.002"/>
+  <system-out><![CDATA[08:56:47.429 [Test worker] INFO co.com.gtc.prospeccion.draft.service.impl.DraftServiceImpl -- Borrador del contacto 900: versión 3 editada por una persona
+08:56:47.454 [Test worker] INFO co.com.gtc.prospeccion.draft.service.impl.DraftServiceImpl -- Borrador 5 (versión 2) descartado
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

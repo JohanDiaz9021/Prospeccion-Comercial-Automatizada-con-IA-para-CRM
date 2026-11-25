@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.integration.gemini.GeminiClientDraftTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:47.773Z" hostname="DESKTOP-4TARBHR" time="0.074">
+  <properties/>
+  <testcase name="sinPerfilOConPerfilDanadoRedactaSoloConElMensajeBase()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientDraftTest" time="0.033"/>
+  <testcase name="enviaReglasComoSistemaYSoloLaEmpresaDelPerfil()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientDraftTest" time="0.012"/>
+  <testcase name="respuestaQueNoEsJsonEsInvalida()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientDraftTest" time="0.008"/>
+  <testcase name="devuelveAsuntoCuerpoModeloYVersionDelPrompt()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientDraftTest" time="0.008"/>
+  <testcase name="sinMensajeBaseNoLlamaAGemini()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientDraftTest" time="0.002"/>
+  <testcase name="respuestaSinAsuntoOCuerpoEsInvalida()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientDraftTest" time="0.008"/>
+  <system-out><![CDATA[08:56:47.802 [Test worker] INFO co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini redactó un borrador en 15 ms (tokens: null de entrada, null de salida)
+08:56:47.802 [Test worker] WARN co.com.gtc.prospeccion.integration.gemini.GeminiClient -- El perfil de interés no es JSON válido; se redacta sin los servicios de la empresa
+08:56:47.804 [Test worker] INFO co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini redactó un borrador en 0 ms (tokens: null de entrada, null de salida)
+08:56:47.818 [Test worker] INFO co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini redactó un borrador en 4 ms (tokens: null de entrada, null de salida)
+08:56:47.836 [Test worker] INFO co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini redactó un borrador en 4 ms (tokens: null de entrada, null de salida)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

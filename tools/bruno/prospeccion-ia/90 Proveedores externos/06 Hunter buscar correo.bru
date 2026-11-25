@@ -1,0 +1,26 @@
+meta {
+  name: Hunter - Buscar correo (GASTA 1 búsqueda si lo encuentra)
+  type: http
+  seq: 6
+}
+
+get {
+  url: https://api.hunter.io/v2/email-finder?domain=empresa-demo.co&first_name=Ana&last_name=Ficticia
+  body: none
+  auth: none
+}
+
+params:query {
+  domain: empresa-demo.co
+  first_name: Ana
+  last_name: Ficticia
+}
+
+headers {
+  X-API-KEY: {{hunterApiKey}}
+}
+
+docs {
+  Tarea 4.1. Cobra 1 búsqueda solo si encuentra el correo. El encabezado de respuesta X-Credits-Used dice cuánto costó.
+  Con la llave "test-api-key" Hunter devuelve una respuesta de ejemplo sin cobrar.
+}

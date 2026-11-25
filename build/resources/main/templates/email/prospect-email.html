@@ -1,0 +1,48 @@
+<!--
+  Plantilla del correo de prospección. La llena EmailComposer al enviar (tarea 5.2), nunca Gemini:
+    {{cuerpo}}             la_draft.BODY aprobado y ya sanitizado (HtmlSanitizerUtil)
+    {{empresa}}            empresa del contacto (escapada)
+    {{empresa_remitente}}  prospeccion.legal.company-name
+    {{linkedin_empresa}}   la_tenantconfig.COMPANY_LINKEDIN_URL; sin él se quita el bloque linkedin
+    {{enlace_baja}}        prospeccion.unsubscribe.base-url?t=<token firmado>
+    {{nit}} {{direccion}} {{politica_datos}}  prospeccion.legal.* (los entrega jurídica, tarea 1.10)
+  El pie legal es la propuesta v1 de docs/negocio/mensaje-base.md, pendiente de jurídica (tarea 1.10). Sin NIT,
+  dirección o política de datos no se envía nada.
+  Este comentario no sale en el correo.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin:0;padding:0;background:#ffffff;">
+  <div style="max-width:600px;margin:0 auto;padding:16px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5;color:#1f2937;">
+
+    <div>{{cuerpo}}</div>
+
+    <!--linkedin-->
+    <p style="margin:16px 0 0;">
+      <a href="{{linkedin_empresa}}" style="color:#0a66c2;">{{empresa_remitente}} en LinkedIn</a>
+    </p>
+    <!--/linkedin-->
+
+    <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0 12px;">
+
+    <p style="margin:0 0 8px;font-size:12px;color:#6b7280;">
+      Le escribimos a su correo corporativo porque su cargo en {{empresa}} se relaciona con los servicios de
+      tecnología de {{empresa_remitente}}. Sus datos de contacto profesional provienen de una base de datos comercial B2B.
+    </p>
+    <p style="margin:0 0 8px;font-size:12px;color:#6b7280;">
+      Si no desea recibir más mensajes nuestros, puede
+      <a href="{{enlace_baja}}" style="color:#6b7280;">darse de baja aquí</a>.
+      Al darse de baja no volverá a recibir correos de {{empresa_remitente}}.
+    </p>
+    <p style="margin:0;font-size:12px;color:#6b7280;">
+      {{empresa_remitente}} · NIT {{nit}} · {{direccion}} ·
+      <a href="{{politica_datos}}" style="color:#6b7280;">Política de tratamiento de datos</a>
+    </p>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+meta {
+  name: Simular turnos
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/sending/preview?count=6&from=2026-11-28T14:50:00
+  body: none
+  auth: inherit
+}
+
+tests {
+  test("responde 200 o 400", function () {
+    expect([200, 400]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Tarea 5.3. Turnos que tendrían N correos aprobados desde 'from' (hora de Colombia; sin 'from' = ahora). No guarda
+  nada. count de 1 a 200. Ejemplo: sábado 14:50 con 2 minutos de espaciado → 14:50 ... 14:58 y el sexto el lunes 7:00.
+}

@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prospección IA (local)</title>
+  <!-- Tipografías e íconos del estándar ES-GS-004 v5: Poppins, Inter, Ubuntu Sans Mono y Material Symbols Outlined. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;700&family=Ubuntu+Sans+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=block">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="header">
+    <div class="franja" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="titulo-app">Prospección IA<small>Mini front local · solo desarrollo</small></div>
+    <div class="estado" id="estado" aria-live="polite"></div>
+  </header>
+
+  <main>
+    <nav class="tabs" role="tablist">
+      <button role="tab" class="tab activa" data-panel="panel-resumen" aria-selected="true"><span class="icono">dashboard</span>Resumen</button>
+      <button role="tab" class="tab" data-panel="panel-panel" aria-selected="false"><span class="icono">monitoring</span>Panel</button>
+      <button role="tab" class="tab" data-panel="panel-busqueda" aria-selected="false"><span class="icono">travel_explore</span>Búsqueda y Campañas</button>
+      <button role="tab" class="tab" data-panel="panel-config" aria-selected="false"><span class="icono">settings</span>Configuración</button>
+      <button role="tab" class="tab" data-panel="panel-calificar" aria-selected="false"><span class="icono">grading</span>Probar Calificación</button>
+      <button role="tab" class="tab" data-panel="panel-redactar" aria-selected="false"><span class="icono">edit_note</span>Probar Redacción</button>
+      <button role="tab" class="tab" data-panel="panel-correo" aria-selected="false"><span class="icono">alternate_email</span>Probar Correo</button>
+      <button role="tab" class="tab" data-panel="panel-bandeja" aria-selected="false"><span class="icono">inbox</span>Bandeja de Borradores</button>
+      <button role="tab" class="tab" data-panel="panel-creditos" aria-selected="false"><span class="icono">toll</span>Créditos</button>
+      <button role="tab" class="tab" data-panel="panel-cola" aria-selected="false"><span class="icono">schedule_send</span>Cola de Envío</button>
+    </nav>
+
+    <!-- ================= Resumen ================= -->
+    <section id="panel-resumen" class="panel" role="tabpanel">
+      <div class="titulo-panel">
+        <div>
+          <h1>Lo que ya Hace Prospección IA</h1>
+          <p class="descripcion">Estado de cada tarea y dónde probarla. La pantalla real va en el CRM (mf-cotizaciones) con la 3.2.</p>
+        </div>
+      </div>
+      <div id="aviso-simulado-resumen" class="alert warning oculto" data-aviso-simulado></div>
+      <div class="tabla-envoltura">
+        <table class="tabla">
+          <colgroup><col style="width:90px"><col><col style="width:340px"><col style="width:190px"></colgroup>
+          <thead><tr><th>Tarea</th><th>Qué Hace</th><th>Estado</th><th>Dónde se Ve</th></tr></thead>
+          <tbody>
+            <tr><td class="codigo">6.2</td>
+              <td title="Configuración por tenant: perfil de interés, mensaje base, umbral y límites, con versiones">Configuración por tenant: perfil de interés, mensaje base, umbral y límites, con versiones</td>
+              <td class="centro"><span class="label success">Lista</span></td>
+              <td><a href="#" data-ir="panel-config">Configuración</a></td></tr>
+            <tr><td class="codigo">3.5</td>
+              <td title="Calificación de contactos con Gemini: puntaje 0-100, categoría A-D y razón">Calificación de contactos con Gemini: puntaje 0-100, categoría A-D y razón</td>
+              <td class="centro"><span class="label success">Lista</span> <span class="label" data-gemini></span></td>
+              <td><a href="#" data-ir="panel-calificar">Probar Calificación</a></td></tr>
+            <tr><td class="codigo">4.1</td>
+              <td title="Correo de contacto con Apollo y Hunter, verificado, con reglas para aceptarlo o descartarlo">Correo de contacto con Apollo y Hunter, verificado, con reglas para aceptarlo o descartarlo</td>
+              <td class="centro"><span class="label success">Lista en el Servicio</span> <span class="label" id="llaves-correo"></span></td>
+              <td><a href="#" data-ir="panel-correo">Probar Correo</a></td></tr>
+            <tr><td class="codigo">4.2</td>
+              <td title="Control de créditos: topes por campaña y por mes, libro de consumo y alertas">Control de créditos: topes por campaña y por mes, libro de consumo y alertas</td>
+              <td class="centro"><span class="label success">Lista</span></td>
+              <td><a href="#" data-ir="panel-creditos">Créditos</a></td></tr>
+            <tr><td class="codigo">4.3</td>
+              <td title="Redacción del correo con Gemini a partir del mensaje base, con revisión de reglas y versiones">Redacción del correo con Gemini a partir del mensaje base, con revisión de reglas y versiones</td>
+              <td class="centro"><span class="label success">Lista</span> <span class="label" data-gemini></span></td>
+              <td><a href="#" data-ir="panel-redactar">Probar Redacción</a></td></tr>
+            <tr><td class="codigo">5.1</td>
+              <td title="Bandeja de borradores: revisar, editar (versión nueva), descartar con motivo y aprobar; al aprobar entra a la cola de envío">Bandeja de borradores: revisar, editar (versión nueva), descartar con motivo y aprobar; al aprobar entra a la cola de envío</td>
+              <td class="centro"><span class="label success">Lista</span></td>
+              <td><a href="#" data-ir="panel-bandeja">Bandeja de Borradores</a></td></tr>
+            <tr><td class="codigo">5.3</td>
+              <td title="Cola de envío con el horario de la Ley 2300, festivos, límite diario y espaciado entre correos">Cola de envío con el horario de la Ley 2300, festivos, límite diario y espaciado entre correos</td>
+              <td class="centro"><span class="label success">Lista</span> <span class="label warning">Envío Real con 5.4</span></td>
+              <td><a href="#" data-ir="panel-cola">Cola de Envío</a></td></tr>
+            <tr><td class="codigo">5.5</td>
+              <td title="Bajas con enlace firmado: página pública de un clic, lista de bloqueo permanente y cancelación de los envíos pendientes">Bajas con enlace firmado: página pública de un clic, lista de bloqueo permanente y cancelación de los envíos pendientes</td>
+              <td class="centro"><span class="label success">Lista</span></td>
+              <td><a href="#" data-ir="panel-cola">Cola de Envío</a></td></tr>
+            <tr><td class="codigo">3.2 · 3.4</td>
+              <td title="Búsqueda en lenguaje natural y campañas automáticas (diarias o semanales): Apollo, descartes contra el CRM, calificación, correo, contacto y borrador en la bandeja">Búsqueda en lenguaje natural y campañas automáticas (diarias o semanales): Apollo, descartes contra el CRM, calificación, correo, contacto y borrador en la bandeja</td>
+              <td class="centro"><span class="label success">Lista</span> <span class="label" id="modo-apollo"></span></td>
+              <td><a href="#" data-ir="panel-busqueda">Búsqueda y Campañas</a></td></tr>
+            <tr><td class="codigo">6.1</td>
+              <td title="Panel: lo que espera a una persona hoy, embudo y tasas de las búsquedas del periodo y créditos del mes">Panel: lo que espera a una persona hoy, embudo y tasas de las búsquedas del periodo y créditos del mes</td>
+              <td class="centro"><span class="label success">Lista</span> <span class="label warning">Envíos y Respuestas con 5.2 y 5.4</span></td>
+              <td><a href="#" data-ir="panel-panel">Panel</a></td></tr>
+            <tr><td class="codigo">3.3</td>
+              <td title="La pantalla real dentro del CRM (mf-cotizaciones)">La pantalla real dentro del CRM (mf-cotizaciones)</td>
+              <td class="centro"><span class="label">Pendiente</span></td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ================= Panel (6.1) ================= -->
+    <section id="panel-panel" class="panel oculto" role="tabpanel">
+      <div class="titulo-panel">
+        <div>
+          <h1>Panel</h1>
+          <p class="descripcion">Cómo va la prospección: lo que espera una persona hoy, el embudo de las búsquedas del periodo y el consumo de créditos del mes.</p>
+        </div>
+        <button type="button" class="btn tertiary" id="recargar-panel"><span class="icono">refresh</span>Actualizar</button>
+      </div>
+
+      <div class="tarjeta">
+        <div class="fila-campos" style="align-items: flex-end">
+          <label class="campo"><span class="campo-etiqueta">Desde</span><input type="date" id="panel-desde"></label>
+          <label class="campo"><span class="campo-etiqueta">Hasta</span><input type="date" id="panel-hasta"></label>
+          <label class="campo"><span class="campo-etiqueta">Búsqueda o Campaña
+              <span class="field-info" data-info="Una campaña incluye sus ejecuciones automáticas de cada día."></span></span>
+            <select id="panel-campana" class="ancho-60"><option value="">Todas</option></select></label>
+          <div class="grupo-botones">
+            <button type="button" class="btn primary" id="buscar-panel"><span class="icono">search</span>Buscar</button>
+            <button type="button" class="btn secondary" id="limpiar-panel"><span class="icono">cleaning_services</span>Limpiar Filtros</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="aviso-panel" class="alert oculto" role="status"></div>
+
+      <h2 class="titulo-seccion">Hoy</h2>
+      <div id="panel-hoy" class="tarjetas-creditos" aria-live="polite"></div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza">
+          <div><h2>Embudo del Periodo</h2><p class="ayuda" id="panel-subtitulo"></p></div>
+          <span class="field-info" data-info="Cuenta lo que trajeron las búsquedas creadas en el periodo y sigue a esos contactos hasta hoy. Así cada paso sale del anterior."></span>
+        </div>
+        <div id="panel-embudo"></div>
+        <div id="panel-quedaron" style="margin-top: var(--m)"></div>
+      </div>
+
+      <h2 class="titulo-seccion">Tasas del Periodo</h2>
+      <div id="panel-tasas" class="tarjetas-creditos tasas"></div>
+
+      <h2 class="titulo-seccion">Créditos del Mes</h2>
+      <div id="panel-creditos-mes" class="tarjetas-creditos"></div>
+    </section>
+
+    <!-- ================= Búsqueda y campañas (3.2) ================= -->
+    <section id="panel-busqueda" class="panel oculto" role="tabpanel">
+      <div class="titulo-panel">
+        <div>
+          <h1>Búsqueda y Campañas</h1>
+          <p class="descripcion">Escriba a quién busca. Gemini lo convierte en filtros de Apollo y la búsqueda hace el resto sola: descarta lo ya visto, califica, consigue el correo, crea el contacto y deja el borrador en la bandeja. Lo único humano es aprobar el correo.</p>
+        </div>
+      </div>
+
+      <div id="aviso-apollo-simulado" class="alert oculto"></div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza"><h2>1. ¿A Quién Busca?</h2><span class="label" data-gemini></span></div>
+        <label class="campo"><span class="campo-etiqueta">Búsqueda en Lenguaje Natural <span class="obligatorio">*</span>
+            <span class="field-info" data-info="Diga el cargo, el sector, la ciudad o el tamaño de la empresa. Gemini propone los filtros y usted los revisa antes de buscar."></span></span>
+          <textarea id="frase-busqueda" rows="2" maxlength="1000" placeholder="Ej.: gerentes de TI de clínicas medianas en Bogotá que usen SAP"></textarea>
+          <small><span id="contador-frase">0</span> de 1.000 caracteres</small>
+        </label>
+        <div class="barra-acciones" style="margin-top: var(--m)">
+          <div class="grupo-botones">
+            <button type="button" class="btn primary" id="interpretar"><span class="icono">auto_awesome</span>Convertir en Filtros</button>
+            <button type="button" class="btn secondary" id="ejemplo-busqueda"><span class="icono">lightbulb</span>Usar un Ejemplo</button>
+          </div>
+        </div>
+        <div id="aviso-interpretar" class="alert oculto" role="status" style="margin-top: var(--m)"></div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza"><h2>2. Revise los Filtros de Apollo</h2><span class="label success">0 Créditos</span></div>
+        <div class="fila-campos">
+          <label class="campo ancho-40"><span class="campo-etiqueta">Cargos
+              <span class="field-info" data-info="Uno por línea, en español y en inglés. Basta con que la persona tenga uno de ellos."></span></span>
+            <textarea id="f-cargos" rows="5" placeholder="Gerente de TI&#10;IT Manager"></textarea></label>
+          <label class="campo ancho-40"><span class="campo-etiqueta">Ubicación de la Empresa
+              <span class="field-info" data-info="Una por línea, como las escribe Apollo: Bogota, Colombia. Si queda vacía se busca en Colombia."></span></span>
+            <textarea id="f-ubicaciones" rows="5" placeholder="Bogota, Colombia"></textarea></label>
+          <label class="campo ancho-40"><span class="campo-etiqueta">Sectores
+              <span class="field-info" data-info="Uno por línea, con el nombre de Apollo en inglés y minúsculas: hospital &amp; health care."></span></span>
+            <textarea id="f-sectores" rows="5" placeholder="hospital &amp; health care"></textarea></label>
+        </div>
+        <div class="campo" style="margin-top: var(--m)"><span class="campo-etiqueta">Nivel del Cargo</span>
+          <div class="opciones" id="f-niveles"></div></div>
+        <div class="campo" style="margin-top: var(--m)"><span class="campo-etiqueta">Tamaño de la Empresa (Empleados)</span>
+          <div class="opciones" id="f-tamanos"></div></div>
+        <div class="fila-campos" style="margin-top: var(--m)">
+          <label class="campo"><span class="campo-etiqueta">Palabras Clave
+              <span class="field-info" data-info="Separadas por coma, hasta 5. Por ejemplo una tecnología (SAP) o una actividad (IPS)."></span></span>
+            <input id="f-claves" class="ancho-40" maxlength="200" placeholder="Ej.: SAP"></label>
+        </div>
+        <div class="barra-acciones" style="margin-top: var(--m)">
+          <label class="campo"><span class="campo-etiqueta">Repetir (Campaña)
+              <span class="field-info" data-info="Además de ejecutarse ahora, la búsqueda se repite sola a las 6:00 y solo procesa personas nuevas: cada día hábil, o una vez por semana (7 días después de la última vez). Se pausa desde el historial."></span></span>
+            <select id="f-campana">
+              <option value="">No Repetir</option>
+              <option value="DAILY">Cada Día Hábil</option>
+              <option value="WEEKLY">Cada Semana</option>
+            </select></label>
+          <div class="grupo-botones">
+            <button type="button" class="btn secondary" id="vista-previa"><span class="icono">visibility</span>Vista Previa</button>
+            <button type="button" class="btn primary" id="ejecutar-busqueda"><span class="icono">play_arrow</span>Ejecutar Búsqueda</button>
+          </div>
+        </div>
+        <div id="aviso-busqueda" class="alert oculto" role="status" style="margin-top: var(--m)"></div>
+        <div id="resultado-previa" style="margin-top: var(--m)"></div>
+      </div>
+
+      <div class="tarjeta oculto" id="tarjeta-ejecucion" aria-live="polite">
+        <div class="tarjeta-cabeza"><h2 id="titulo-ejecucion">Ejecución</h2><span id="estado-ejecucion"></span></div>
+        <div id="embudo-ejecucion" class="tarjetas-creditos"></div>
+        <div id="nota-ejecucion"></div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza">
+          <h2>Historial y Campañas</h2>
+          <div class="grupo-botones">
+            <button type="button" class="btn tertiary" id="recargar-busquedas"><span class="icono">refresh</span>Actualizar</button>
+            <button type="button" class="btn secondary" id="repetir-campanas"><span class="icono">event_repeat</span>Repetir Campañas Ahora</button>
+            <button type="button" class="btn secondary" id="borrar-busquedas"><span class="icono">delete_outline</span>Borrar Datos de Prueba</button>
+          </div>
+        </div>
+        <div id="aviso-historial" class="alert oculto" role="status"></div>
+        <div id="tabla-busquedas"></div>
+      </div>
+    </section>
+
+    <!-- ================= Configuración (6.2) ================= -->
+    <section id="panel-config" class="panel oculto" role="tabpanel">
+      <div class="titulo-panel">
+        <div>
+          <h1>Configuración del Tenant</h1>
+          <p class="descripcion">Cada vez que guarda se crea una versión nueva y la anterior queda en el historial.</p>
+        </div>
+        <span class="label" id="version">Cargando…</span>
+      </div>
+
+      <div id="aviso-config" class="alert oculto" role="status"></div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza"><h2>Límites y Envío</h2></div>
+        <div class="fila-campos">
+          <label class="campo">
+            <span class="campo-etiqueta">Umbral para Conseguir el Correo <span class="obligatorio">*</span></span>
+            <input type="number" id="umbral" class="ancho-6" min="0" max="100" required>
+            <small>De 0 a 100. 60 = A y B.</small>
+          </label>
+          <label class="campo">
+            <span class="campo-etiqueta">Correos por Día
+              <span class="field-info" data-info="Se sube poco a poco durante el calentamiento del buzón (tarea 1.12)."></span></span>
+            <input type="number" id="limite-diario" class="ancho-6" min="0">
+          </label>
+          <label class="campo">
+            <span class="campo-etiqueta">Segundos entre Correos</span>
+            <input type="number" id="espaciado" class="ancho-6" min="0">
+            <small>Espera mínima entre envíos.</small>
+          </label>
+          <label class="campo">
+            <span class="campo-etiqueta">LinkedIn de la Empresa
+              <span class="field-info" data-info="Opcional. Va en el pie de cada correo. Debe empezar por https://"></span></span>
+            <input type="url" id="linkedin" class="ancho-60" maxlength="255" placeholder="https://www.linkedin.com/company/…">
+          </label>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza">
+          <h2>Perfil de Interés</h2>
+          <div class="barra-acciones">
+            <div class="grupo-botones">
+              <button type="button" class="btn tertiary" id="formatear"><span class="icono">data_object</span>Formatear JSON</button>
+              <button type="button" class="btn secondary" id="cargar-perfil"><span class="icono">file_open</span>Cargar el Aprobado</button>
+            </div>
+          </div>
+        </div>
+        <textarea id="perfil" class="codigo" rows="18" spellcheck="false" maxlength="20000"></textarea>
+        <div class="pie-campo"><span id="perfil-estado"></span><span id="perfil-resumen"></span></div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza">
+          <h2>Mensaje Base</h2>
+          <button type="button" class="btn secondary" id="cargar-mensaje"><span class="icono">file_open</span>Cargar el Aprobado</button>
+        </div>
+        <textarea id="mensaje" rows="14" maxlength="5000"></textarea>
+        <div class="pie-campo"><span id="mensaje-estado"></span><span id="mensaje-largo"></span></div>
+      </div>
+
+      <div class="acciones-formulario">
+        <button type="button" class="btn secondary" id="recargar"><span class="icono">refresh</span>Recargar</button>
+        <button type="button" class="btn primary" id="guardar"><span class="icono">save</span><span class="texto">Guardar Versión Nueva</span></button>
+      </div>
+    </section>
+
+    <!-- ================= Probar calificación (3.5) ================= -->
+    <section id="panel-calificar" class="panel oculto" role="tabpanel">
+      <div class="titulo-panel">
+        <div>
+          <h1>Probar Calificación</h1>
+          <p class="descripcion">Escriba hasta 10 contactos y vea el puntaje que les daría el sistema. No se guarda nada.</p>
+        </div>
+      </div>
+
+      <div class="alert warning oculto" data-aviso-simulado></div>
+      <div class="alert warning">
+        <span class="icono">warning</span>
+        <div><strong>Solo Datos Inventados</strong>
+          <p>Con la capa gratuita de Gemini, Google puede usar lo que se envía para mejorar sus productos. No escriba personas ni empresas reales.</p></div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="opciones">
+          <fieldset class="grupo">
+            <legend>Perfil a Usar</legend>
+            <label><input type="radio" name="fuente" value="vigente" checked> El guardado (vigente)</label>
+            <label><input type="radio" name="fuente" value="formulario"> El de la pestaña Configuración, sin guardar</label>
+          </fieldset>
+          <label class="campo">
+            <span class="campo-etiqueta">Umbral</span>
+            <input type="number" id="umbral-prueba" class="ancho-6" min="0" max="100" placeholder="60">
+            <small>Vacío = el del tenant.</small>
+          </label>
+        </div>
+
+        <div class="barra-acciones">
+          <h2>Contactos <span class="ayuda" id="cuenta-contactos"></span></h2>
+          <div class="grupo-botones">
+            <button type="button" class="btn secondary" id="ejemplos"><span class="icono">list_alt</span>Cargar los 5 Ejemplos</button>
+            <button type="button" class="btn secondary" id="agregar"><span class="icono">add</span>Agregar Contacto</button>
+            <button type="button" class="btn tertiary" id="limpiar"><span class="icono">cleaning_services</span>Limpiar</button>
+          </div>
+        </div>
+        <div id="contactos" class="contactos" style="margin-top: var(--m)"></div>
+        <datalist id="sectores"></datalist>
+
+        <div class="acciones-formulario">
+          <button type="button" class="btn primary" id="calificar"><span class="icono">grading</span><span class="texto">Calificar con Gemini</span></button>
+        </div>
+      </div>
+
+      <div id="aviso-calificar" class="alert oculto" role="status"></div>
+      <div id="resultados" class="resultados" aria-live="polite"></div>
+    </section>
+
+    <!-- ================= Probar redacción (4.3) ================= -->
+    <section id="panel-redactar" class="panel oculto" role="tabpanel">
+      <div class="titulo-panel">
+        <div>
+          <h1>Probar Redacción</h1>
+          <p class="descripcion">Escriba un contacto y vea el borrador que Gemini redactaría con el mensaje base. No se guarda nada.</p>
+        </div>
+      </div>
+
+      <div class="alert warning oculto" data-aviso-simulado></div>
+      <div class="alert warning">
+        <span class="icono">warning</span>
+        <div><strong>Solo Datos Inventados</strong>
+          <p>Con la capa gratuita de Gemini, Google puede usar lo que se envía para mejorar sus productos. No escriba personas ni empresas reales.</p></div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="opciones">
+          <fieldset class="grupo">
+            <legend>Mensaje Base a Usar</legend>
+            <label><input type="radio" name="fuente-mensaje" value="vigente" checked> El guardado (vigente)</label>
+            <label><input type="radio" name="fuente-mensaje" value="formulario"> El de la pestaña Configuración, sin guardar</label>
+          </fieldset>
+        </div>
+
+        <div class="barra-acciones" style="margin-bottom: var(--m)">
+          <h2>Contacto <span class="ayuda">(lo que no se sepa, en blanco)</span></h2>
+          <button type="button" class="btn secondary" id="ejemplo-redactar"><span class="icono">list_alt</span>Cargar el Ejemplo</button>
+        </div>
+        <div class="fila-campos" id="contacto-redactar">
+          <label class="campo"><span class="campo-etiqueta">Primer Nombre</span><input data-campo="firstName" class="ancho-20" maxlength="100" placeholder="Ej.: Laura"></label>
+          <label class="campo"><span class="campo-etiqueta">Cargo</span><input data-campo="title" class="ancho-40" maxlength="200" placeholder="Ej.: Directora de Tecnología"></label>
+          <label class="campo"><span class="campo-etiqueta">Empresa</span><input data-campo="organizationName" class="ancho-40" maxlength="200" placeholder="Ej.: Clínica Ficticia"></label>
+          <label class="campo"><span class="campo-etiqueta">Sector
+              <span class="field-info" data-info="Como lo escribe Apollo, en inglés (por ejemplo hospital & health care). La lista sugiere los del perfil."></span></span>
+            <input data-campo="industry" class="ancho-40" maxlength="150" list="sectores" placeholder="hospital &amp; health care"></label>
+          <label class="campo"><span class="campo-etiqueta">Empleados</span><input data-campo="companySize" class="ancho-6" maxlength="30" placeholder="250"></label>
+          <label class="campo"><span class="campo-etiqueta">Ciudad</span><input data-campo="city" class="ancho-20" maxlength="150" placeholder="Bogota"></label>
+        </div>
+
+        <div class="acciones-formulario">
+          <button type="button" class="btn primary" id="redactar"><span class="icono">edit_note</span><span class="texto">Redactar con Gemini</span></button>
+        </div>
+      </div>
+
+      <div id="aviso-redactar" class="alert oculto" role="status"></div>
+      <div id="borrador" class="resultados" aria-live="polite"></div>
+    </section>
+
+    <!-- ================= Probar correo (4.1 y 4.2) ================= -->
+    <section id="panel-correo" class="panel oculto" role="tabpanel">
+      <div class="titulo-panel">
+        <div>
+          <h1>Probar Correo</h1>
+          <p class="descripcion">Busque una persona en Apollo y consiga su correo de trabajo verificado, como lo hará la búsqueda (3.2). Solo existe en local.</p>
+        </div>
+      </div>
+
+      <div id="aviso-llaves-correo" class="alert oculto"></div>
+      <div class="alert warning">
+        <span class="icono">warning</span>
+        <div><strong>Gasta Créditos Reales</strong>
+          <p>Buscar en Apollo no cuesta. Conseguir el correo cuesta hasta 1 crédito de Apollo, 1 búsqueda y 0,5 verificación de Hunter, con los mismos topes de la pestaña Créditos.</p></div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza"><h2>Buscar en Apollo <span class="label success">0 Créditos</span></h2></div>
+        <div class="fila-campos" id="filtros-apollo">
+          <label class="campo"><span class="campo-etiqueta">Cargo</span><input data-campo="title" class="ancho-40" maxlength="200" placeholder="Ej.: Gerente de TI"></label>
+          <label class="campo"><span class="campo-etiqueta">Ubicación</span><input data-campo="location" class="ancho-20" maxlength="100" placeholder="Bogota, Colombia"></label>
+          <label class="campo"><span class="campo-etiqueta">Empleados</span>
+            <select data-campo="employeeRange">
+              <option value="">Todos</option>
+              <option value="11,50">11 a 50</option>
+              <option value="51,200">51 a 200</option>
+              <option value="201,500">201 a 500</option>
+              <option value="501,1000">501 a 1.000</option>
+              <option value="1001,5000">1.001 a 5.000</option>
+            </select>
+          </label>
+          <label class="campo"><span class="campo-etiqueta">Palabras Clave</span><input data-campo="keywords" class="ancho-40" maxlength="200" placeholder="Ej.: SAP"></label>
+          <div class="campo">
+            <span class="campo-etiqueta">&nbsp;</span>
+            <div class="grupo-botones">
+              <button type="button" class="btn primary" id="buscar-apollo"><span class="icono">search</span>Buscar</button>
+              <button type="button" class="btn secondary" id="limpiar-apollo"><span class="icono">cleaning_services</span>Limpiar Filtros</button>
+            </div>
+          </div>
+        </div>
+        <div id="aviso-apollo" class="alert oculto" role="status" style="margin-top: var(--m)"></div>
+        <div id="resultados-apollo" style="margin-top: var(--m)"></div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza"><h2>Conseguir el Correo</h2></div>
+        <div class="fila-campos">
+          <label class="campo"><span class="campo-etiqueta">ID de Apollo <span class="obligatorio">*</span>
+              <span class="field-info" data-info="Sale de la búsqueda de arriba (botón de correo en cada fila) o de Bruno: 90 Proveedores externos / 01 Apollo buscar personas."></span></span>
+            <input id="apollo-id" class="ancho-40 mono" maxlength="100" placeholder="Ej.: 5f2a…"></label>
+          <div class="campo">
+            <span class="campo-etiqueta">&nbsp;</span>
+            <button type="button" class="btn primary" id="conseguir-correo"><span class="icono">alternate_email</span>Conseguir Correo</button>
+          </div>
+        </div>
+        <div id="aviso-correo" class="alert oculto" role="status" style="margin-top: var(--m)"></div>
+        <div id="resultado-correo"></div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza">
+          <h2>Probar Solo con Hunter <span class="label info">Sin Apollo</span></h2>
+        </div>
+        <p class="descripcion" style="margin: 0 0 var(--m)">Mismas reglas de la 4.1 y mismos topes de créditos, pero con la persona escrita a mano. Pruebe con sus propios datos y el dominio de su empresa.</p>
+        <div class="fila-campos" id="filtros-hunter">
+          <label class="campo"><span class="campo-etiqueta">Nombre <span class="obligatorio">*</span></span>
+            <input data-campo="firstName" class="ancho-20" maxlength="100" placeholder="Ej.: Ana"></label>
+          <label class="campo"><span class="campo-etiqueta">Apellido <span class="obligatorio">*</span></span>
+            <input data-campo="lastName" class="ancho-20" maxlength="100" placeholder="Ej.: Pérez"></label>
+          <label class="campo"><span class="campo-etiqueta">Dominio de la Empresa <span class="obligatorio">*</span>
+              <span class="field-info" data-info="Solo el dominio, por ejemplo gtccorporation.com. Si pega la dirección web o un correo (nombre@empresa.com), se limpia solo."></span></span>
+            <input data-campo="domain" class="ancho-40 mono" maxlength="255" placeholder="empresa.com"></label>
+          <div class="campo">
+            <span class="campo-etiqueta">&nbsp;</span>
+            <button type="button" class="btn primary" id="buscar-hunter"><span class="icono">alternate_email</span>Buscar con Hunter</button>
+          </div>
+        </div>
+        <div id="aviso-hunter" class="alert oculto" role="status" style="margin-top: var(--m)"></div>
+        <div id="resultado-hunter"></div>
+      </div>
+    </section>
+
+    <!-- ================= Bandeja de borradores (5.1) ================= -->
+    <section id="panel-bandeja" class="panel oculto" role="tabpanel">
+      <div class="titulo-panel">
+        <div>
+          <h1>Bandeja de Borradores</h1>
+          <p class="descripcion">Ningún correo sale sin que una persona lo apruebe. Revise, edite si hace falta y apruebe: el correo entra a la cola de envío con su turno.</p>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="fila-campos" style="align-items: flex-end">
+          <label class="campo"><span class="campo-etiqueta">Estado</span>
+            <select id="filtro-estado">
+              <option value="">Todos</option>
+              <option value="1" selected>Por Revisar</option>
+              <option value="2">Aprobado</option>
+              <option value="3">Descartado</option>
+              <option value="4">Vencido</option>
+            </select>
+          </label>
+          <div class="grupo-botones">
+            <button type="button" class="btn primary" id="buscar-bandeja"><span class="icono">search</span>Buscar</button>
+            <button type="button" class="btn secondary" id="limpiar-bandeja"><span class="icono">cleaning_services</span>Limpiar Filtros</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="barra-acciones" style="margin-bottom: var(--m)">
+        <button type="button" class="btn primary" id="nuevo-demo"><span class="icono">add</span>Nuevo Borrador de Prueba</button>
+        <button type="button" class="btn secondary" id="borrar-demo"><span class="icono">delete_outline</span>Borrar Datos de Prueba</button>
+      </div>
+
+      <div id="aviso-bandeja" class="alert oculto" role="status"></div>
+      <div id="tabla-bandeja"></div>
+    </section>
+
+    <!-- ================= Créditos (4.2) ================= -->
+    <section id="panel-creditos" class="panel oculto" role="tabpanel">
+      <div class="titulo-panel">
+        <div>
+          <h1>Créditos del Mes</h1>
+          <p class="descripcion">Consumo de Apollo y Hunter de este tenant frente al presupuesto mensual. Se anota cada vez que se consigue un correo (4.1).</p>
+        </div>
+        <button type="button" class="btn tertiary" id="recargar-creditos"><span class="icono">refresh</span>Actualizar</button>
+      </div>
+      <div id="aviso-creditos" class="alert oculto" role="status"></div>
+      <div id="creditos" class="tarjetas-creditos" aria-live="polite"></div>
+      <p class="ayuda">Los topes salen del .env (APOLLO_MONTHLY_CREDITS, HUNTER_MONTHLY_CREDITS, *_CREDITS_PER_SEARCH) y son
+        provisionales hasta comprar los planes. Detalle en docs/negocio/creditos.md.</p>
+    </section>
+    <!-- ================= Cola de envío (5.3) ================= -->
+    <section id="panel-cola" class="panel oculto" role="tabpanel">
+      <div class="titulo-panel">
+        <div>
+          <h1>Cola de Envío</h1>
+          <p class="descripcion">Cada borrador aprobado recibe la hora en que saldrá: siempre dentro del horario de la Ley 2300, con el espaciado y el límite diario de la configuración.</p>
+        </div>
+        <button type="button" class="btn tertiary" id="recargar-cola"><span class="icono">refresh</span>Actualizar</button>
+      </div>
+
+      <div id="aviso-cola" class="alert oculto" role="status"></div>
+      <div id="estado-cola" class="tarjetas-creditos" aria-live="polite"></div>
+
+      <div class="alert info">
+        <span class="icono">info</span>
+        <div><strong>Horario de la Ley 2300</strong>
+          <p>Lunes a viernes de 7:00 a 19:00 y sábados de 8:00 a 15:00, hora de Colombia. Nunca domingos ni festivos. Con los jobs encendidos, el despachador revisa la cola cada minuto y envía respetando el espaciado.</p></div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza">
+          <h2>Probar el Envío <span class="label">Solo Local</span></h2>
+          <a class="btn tertiary" href="http://localhost:8025" target="_blank" rel="noopener"><span class="icono">open_in_new</span>Abrir Mailpit</a>
+        </div>
+        <p class="descripcion" style="margin: 0 0 var(--m)">Con <code>MAILBOX_PROVIDER=smtp</code> los correos van a Mailpit, que los atrapa y nunca los entrega a nadie. "Enviar Ya" no espera el turno ni el horario; sí respeta el límite diario.</p>
+        <div class="grupo-botones">
+          <button type="button" class="btn primary" id="enviar-ya"><span class="icono">send</span>Enviar Ya</button>
+          <button type="button" class="btn secondary" id="leer-buzon"><span class="icono">mark_email_unread</span>Leer el Buzón</button>
+        </div>
+        <div id="aviso-envio" class="alert oculto" role="status" style="margin: var(--m) 0 0"></div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza"><h2>Simular Turnos <span class="label">No Guarda Nada</span></h2></div>
+        <div class="fila-campos">
+          <label class="campo"><span class="campo-etiqueta">Correos Aprobados <span class="obligatorio">*</span></span>
+            <input type="number" id="sim-cantidad" class="ancho-6" min="1" max="200" value="10"></label>
+          <label class="campo"><span class="campo-etiqueta">Desde
+              <span class="field-info" data-info="Vacío = ahora. Pruebe un sábado a las 14:50 o la víspera de un festivo para ver cómo se corren los turnos."></span></span>
+            <input type="datetime-local" id="sim-desde" class="ancho-20"></label>
+          <div class="campo">
+            <span class="campo-etiqueta">&nbsp;</span>
+            <button type="button" class="btn primary" id="simular-cola"><span class="icono">event_upcoming</span>Simular</button>
+          </div>
+        </div>
+        <div id="resultado-simulacion" style="margin-top: var(--m)"></div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza"><h2>Lista de Bloqueo</h2></div>
+        <p class="descripcion" style="margin: 0 0 var(--m)">Correos a los que nunca se vuelve a escribir: quienes se dieron de baja con el enlace del correo, rebotes duros y quejas. La baja es permanente y automática.</p>
+        <div id="tabla-bloqueos"></div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-cabeza">
+          <h2>Festivos de Colombia</h2>
+          <label class="campo"><select id="anio-festivos" aria-label="Año"></select></label>
+        </div>
+        <div id="tabla-festivos"></div>
+        <p class="ayuda" style="margin-top: var(--s)">Se calculan solos cada año (Ley 51 de 1983). Un día no hábil extraordinario se agrega con prospeccion.ley2300.extra-holidays.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Herramienta local de desarrollo de Prospección IA · no se despliega</span>
+    <span>Estándar de interfaces ES-GS-004 v5 · GTC Corporation</span>
+  </footer>
+
+  <!-- Confirmation Dialog, variante de proceso (ícono Info y botón Primary con el nombre de la acción). -->
+  <dialog id="confirmar-correo" class="dialogo">
+    <span class="icono info-icono">info</span>
+    <h3>¿Conseguir el Correo de Esta Persona?</h3>
+    <p>Puede gastar hasta 1 crédito de Apollo y 1,5 de Hunter. Lo gastado queda en la pestaña Créditos y no se puede deshacer.</p>
+    <div class="acciones-formulario">
+      <button type="button" class="btn secondary" value="no"><span class="icono">close</span>Cancelar</button>
+      <button type="button" class="btn primary" value="si"><span class="icono">alternate_email</span>Conseguir Correo</button>
+    </div>
+  </dialog>
+
+  <!-- Drawer lateral de 520 px (estándar 6.6: formularios de 5 a 15 campos y revisión del borrador). -->
+  <dialog id="drawer" class="drawer" aria-labelledby="drawer-titulo">
+    <div class="drawer-cabeza">
+      <h2 id="drawer-titulo"></h2>
+      <button type="button" class="btn-icono" id="drawer-cerrar" title="Cerrar" aria-label="Cerrar"><span class="icono">close</span></button>
+    </div>
+    <div class="drawer-cuerpo" id="drawer-cuerpo"></div>
+    <div class="drawer-pie" id="drawer-pie"></div>
+  </dialog>
+
+  <div id="tooltip" class="tooltip oculto" role="tooltip"></div>
+
+  <!-- Confirmation Dialog genérico (variante de proceso o destructiva). -->
+  <dialog id="dialogo" class="dialogo">
+    <span class="icono" id="dialogo-icono">info</span>
+    <h3 id="dialogo-titulo"></h3>
+    <p id="dialogo-texto"></p>
+    <label class="campo oculto" id="dialogo-motivo-campo" style="margin-top: var(--m)">
+      <span class="campo-etiqueta">Motivo <span class="obligatorio">*</span></span>
+      <textarea id="dialogo-motivo" rows="3" maxlength="500" placeholder="Ej.: el contacto ya es cliente"></textarea>
+      <small id="dialogo-motivo-error" class="oculto" style="color: var(--error)">Escriba el motivo.</small>
+    </label>
+    <div class="acciones-formulario">
+      <button type="button" class="btn secondary" id="dialogo-cancelar"><span class="icono">close</span>Cancelar</button>
+      <button type="button" class="btn primary" id="dialogo-aceptar"></button>
+    </div>
+  </dialog>
+
+  <template id="plantilla-contacto">
+    <article class="contacto">
+      <div class="contacto-cabeza">
+        <span class="numero"></span>
+        <button type="button" class="btn-icono quitar" title="Quitar contacto" aria-label="Quitar contacto"><span class="icono">delete_outline</span></button>
+      </div>
+      <div class="fila-campos">
+        <label class="campo"><span class="campo-etiqueta">Cargo</span><input data-campo="title" class="ancho-40" maxlength="200" placeholder="Ej.: Director de Tecnología"></label>
+        <label class="campo"><span class="campo-etiqueta">Empresa</span><input data-campo="organizationName" class="ancho-40" maxlength="200" placeholder="Ej.: Clínica Ficticia"></label>
+        <label class="campo"><span class="campo-etiqueta">Ubicación</span><input data-campo="personLocations" class="ancho-20" maxlength="100" placeholder="Bogota, Colombia"></label>
+        <label class="campo"><span class="campo-etiqueta">Sector</span><input data-campo="industries" class="ancho-40" maxlength="100" list="sectores" placeholder="hospital &amp; health care"></label>
+        <label class="campo"><span class="campo-etiqueta">Empleados</span>
+          <select data-campo="employeeRanges">
+            <option value="">No se sabe</option>
+            <option value="1,10">1 a 10</option>
+            <option value="11,50">11 a 50</option>
+            <option value="51,200">51 a 200</option>
+            <option value="201,500">201 a 500</option>
+            <option value="501,1000">501 a 1.000</option>
+            <option value="1001,5000">1.001 a 5.000</option>
+            <option value="5001,10000">5.001 a 10.000</option>
+            <option value="10001,">Más de 10.000</option>
+          </select>
+        </label>
+        <label class="campo ancho-lleno"><span class="campo-etiqueta">Señales <span class="ayuda">(una por línea)</span></span>
+          <textarea data-campo="signals" rows="2" placeholder="Ej.: La empresa usa SAP"></textarea></label>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeTokenServiceImplTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:50.951Z" hostname="DESKTOP-4TARBHR" time="0.007">
+  <properties/>
+  <testcase name="sinTenantOConSecretoCortoNoFirma()" classname="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeTokenServiceImplTest" time="0.001"/>
+  <testcase name="elTokenLlevaElTenantYElEnvioYSeVerifica()" classname="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeTokenServiceImplTest" time="0.001"/>
+  <testcase name="elPixelLlevaOtraFirmaQueElEnlaceDeBaja()" classname="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeTokenServiceImplTest" time="0.002"/>
+  <testcase name="unTokenAlteradoNoSirve()" classname="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeTokenServiceImplTest" time="0.001"/>
+  <testcase name="elEnlaceUsaLaUrlPublica()" classname="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeTokenServiceImplTest" time="0.0"/>
+  <testcase name="basuraNoLanzaError()" classname="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeTokenServiceImplTest" time="0.0"/>
+  <testcase name="conOtroSecretoNoSirve()" classname="co.com.gtc.prospeccion.tracking.service.impl.UnsubscribeTokenServiceImplTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

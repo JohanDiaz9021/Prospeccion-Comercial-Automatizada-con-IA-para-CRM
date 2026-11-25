@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.security.OperationsAuthoritiesConverterTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:50.393Z" hostname="DESKTOP-4TARBHR" time="0.005">
+  <properties/>
+  <testcase name="noDuplicaElPrefijoNiImportanLasMayusculas()" classname="co.com.gtc.prospeccion.security.OperationsAuthoritiesConverterTest" time="0.002"/>
+  <testcase name="unaOperacionMalEscritaDetieneElArranque()" classname="co.com.gtc.prospeccion.security.OperationsAuthoritiesConverterTest" time="0.001"/>
+  <testcase name="cadaRolRecibeSusOperacionesYSuRol()" classname="co.com.gtc.prospeccion.security.OperationsAuthoritiesConverterTest" time="0.0"/>
+  <testcase name="cualquierOperacionIncluyeVer()" classname="co.com.gtc.prospeccion.security.OperationsAuthoritiesConverterTest" time="0.0"/>
+  <testcase name="unRolQueNoEstaEnLaTablaNoTieneOperaciones()" classname="co.com.gtc.prospeccion.security.OperationsAuthoritiesConverterTest" time="0.0"/>
+  <testcase name="superadminTieneTodasComoEnElFront()" classname="co.com.gtc.prospeccion.security.OperationsAuthoritiesConverterTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

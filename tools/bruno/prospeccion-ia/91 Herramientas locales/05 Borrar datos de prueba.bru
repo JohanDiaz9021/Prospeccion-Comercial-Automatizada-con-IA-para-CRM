@@ -1,0 +1,16 @@
+meta {
+  name: Borrar datos de prueba (DEMO)
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl}}/api/dev/drafts/demo
+  body: none
+  auth: inherit
+}
+
+docs {
+  Solo perfil local. Borra los contactos cuyo prospecto empieza por "[DEMO]" con su evidencia, sus borradores y sus
+  turnos de envío. No toca nada más.
+}

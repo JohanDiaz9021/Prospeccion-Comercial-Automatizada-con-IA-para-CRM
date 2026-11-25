@@ -1,0 +1,16 @@
+meta {
+  name: Marcar como enviado (seguimiento)
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{baseUrl}}/api/dev/mailbox/drafts/{{draftId}}/mark-sent
+  body: none
+  auth: inherit
+}
+
+docs {
+  Solo perfil local (tarea 5.4). Marca como Enviado el correo de un borrador aprobado, como lo hará la 5.2, sin enviar
+  nada. Después se simula lo que llega al buzón con "10 Simular mensaje del buzon". 409 si no está en cola.
+}

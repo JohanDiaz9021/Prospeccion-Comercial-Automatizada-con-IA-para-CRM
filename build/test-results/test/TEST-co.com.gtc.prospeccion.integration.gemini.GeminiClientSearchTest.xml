@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.integration.gemini.GeminiClientSearchTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:47.888Z" hostname="DESKTOP-4TARBHR" time="0.027">
+  <properties/>
+  <testcase name="respuestaQueNoEsJsonEsInvalida()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientSearchTest" time="0.009"/>
+  <testcase name="devuelveLosFiltrosConModeloYVersion()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientSearchTest" time="0.008"/>
+  <testcase name="enviaLaFraseLosValoresValidosYSoloSectoresYUbicacionesDelPerfil()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientSearchTest" time="0.007"/>
+  <testcase name="frasaVaciaNoLlamaAGemini()" classname="co.com.gtc.prospeccion.integration.gemini.GeminiClientSearchTest" time="0.002"/>
+  <system-out><![CDATA[08:56:47.904 [Test worker] INFO co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini interpretó una búsqueda en 3 ms (tokens: null de entrada, null de salida)
+08:56:47.912 [Test worker] INFO co.com.gtc.prospeccion.integration.gemini.GeminiClient -- Gemini interpretó una búsqueda en 3 ms (tokens: null de entrada, null de salida)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

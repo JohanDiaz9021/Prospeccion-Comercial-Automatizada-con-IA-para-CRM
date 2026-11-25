@@ -1,0 +1,41 @@
+meta {
+  name: Probar redacción
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/api/drafts/preview
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "baseMessage": null,
+    "contact": {
+      "firstName": "Laura",
+      "title": "Directora de Tecnología",
+      "organizationName": "Clínica Ficticia del Norte",
+      "industry": "hospital & health care",
+      "companySize": "250",
+      "city": "Bogota"
+    }
+  }
+}
+
+tests {
+  test("responde 200, 400 o 502", function () {
+    expect([200, 400, 502]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Tarea 4.3. Redacta un borrador para un contacto escrito a mano y no guarda nada. SOLO DATOS INVENTADOS:
+  con la capa gratuita de Gemini, Google puede usar lo que se envía.
+  - baseMessage (opcional): mensaje base a probar sin guardarlo. Si no viene, usa el de la configuración vigente.
+  - contact: firstName, title, organizationName, industry, companySize, city. Lo que no se sepa, en null.
+  - Respuesta: subject, body (HTML limpio), bodyText, words, warnings (avisos para quien revisa), model y promptVersion.
+  - 400 lblBaseMessageMissing: no hay mensaje base. 400 lblDraftNotValid: Gemini falló las reglas dos veces.
+    502: Gemini no respondió (llave o cuota).
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:49.161Z" hostname="DESKTOP-4TARBHR" time="0.041">
+  <properties/>
+  <testcase name="siNoSeConfiaEnApolloTambienVerifica()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.006"/>
+  <testcase name="correoPersonalSeDescartaSinGastarVerificacion()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="elFinderSoloSeAnotaSiEncuentra()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="normalizaElDominio()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="conElTopeAlcanzadoNoSeLlamaAlProveedor()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.002"/>
+  <testcase name="apolloNoReconoceLaPersona()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="correoInvalidoWebmailODesechableSeDescarta()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="losDominiosPersonalesSalenDelPerfilDelTenant()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.002"/>
+  <testcase name="correoDeHunterConPuntajeBajoSeVerificaAparte()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="soloHunterConDominioPersonalNoGasta()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="sinCorreoEnApolloLoBuscaHunterYSiYaVieneVerificadoNoGastaVerificacion()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="acceptAllSePuedeDejarFueraPorConfiguracion()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="cupoAgotadoSePropagaParaReintentarDespues()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.002"/>
+  <testcase name="correoVerificadoPorApolloSeAceptaSinGastarHunter()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="correoDeApolloSinVerificarPasaPorHunter()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="elResultadoNoImprimeElCorreo()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="revisaElTopeAntesDeLlamarYAnotaLoGastadoConLaCampana()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.002"/>
+  <testcase name="hunterNoLoEncuentra()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="siApolloNoEntregaCorreoNoSeAnotaCredito()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="personaQuePidioNoSerProcesadaQuedaMarcada()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.002"/>
+  <testcase name="sinDominioDeLaEmpresaNoSeLlamaAHunter()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="soloHunterNoLlamaAApolloYAplicaLasMismasReglas()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <testcase name="siHunterSeQuedaSinTopeLoDeApolloYaQuedoAnotado()" classname="co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImplTest" time="0.001"/>
+  <system-out><![CDATA[08:56:49.164 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=FOUND, source=APOLLO, verification=valid, apolloCredits=1, hunterSearchCredits=0.0, hunterVerificationCredits=0.5]
+08:56:49.169 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=DISCARDED, source=APOLLO, verification=PERSONAL_DOMAIN, apolloCredits=1, hunterSearchCredits=0.0, hunterVerificationCredits=0.0]
+08:56:49.170 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=NOT_FOUND, source=null, verification=null, apolloCredits=0, hunterSearchCredits=0.0, hunterVerificationCredits=0.0]
+08:56:49.176 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=NO_MATCH, source=null, verification=null, apolloCredits=0, hunterSearchCredits=0.0, hunterVerificationCredits=0.0]
+08:56:49.177 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=DISCARDED, source=APOLLO, verification=invalid, apolloCredits=1, hunterSearchCredits=0.0, hunterVerificationCredits=0.5]
+08:56:49.177 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=DISCARDED, source=APOLLO, verification=webmail, apolloCredits=1, hunterSearchCredits=0.0, hunterVerificationCredits=0.5]
+08:56:49.177 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=DISCARDED, source=APOLLO, verification=disposable, apolloCredits=1, hunterSearchCredits=0.0, hunterVerificationCredits=0.5]
+08:56:49.178 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=DISCARDED, source=APOLLO, verification=unknown, apolloCredits=1, hunterSearchCredits=0.0, hunterVerificationCredits=0.5]
+08:56:49.180 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=DISCARDED, source=APOLLO, verification=PERSONAL_DOMAIN, apolloCredits=1, hunterSearchCredits=0.0, hunterVerificationCredits=0.0]
+08:56:49.183 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=FOUND, source=HUNTER, verification=accept_all, apolloCredits=0, hunterSearchCredits=1.0, hunterVerificationCredits=0.5]
+08:56:49.185 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=NOT_FOUND, source=null, verification=null, apolloCredits=0, hunterSearchCredits=0.0, hunterVerificationCredits=0.0]
+08:56:49.186 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=FOUND, source=HUNTER, verification=valid, apolloCredits=0, hunterSearchCredits=1.0, hunterVerificationCredits=0.0]
+08:56:49.187 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=DISCARDED, source=APOLLO, verification=accept_all, apolloCredits=1, hunterSearchCredits=0.0, hunterVerificationCredits=0.5]
+08:56:49.190 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=FOUND, source=APOLLO, verification=APOLLO_VERIFIED, apolloCredits=1, hunterSearchCredits=0.0, hunterVerificationCredits=0.0]
+08:56:49.193 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=FOUND, source=APOLLO, verification=valid, apolloCredits=1, hunterSearchCredits=0.0, hunterVerificationCredits=0.5]
+08:56:49.194 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=FOUND, source=APOLLO, verification=APOLLO_VERIFIED, apolloCredits=1, hunterSearchCredits=0.0, hunterVerificationCredits=0.0]
+08:56:49.195 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=FOUND, source=APOLLO, verification=valid, apolloCredits=1, hunterSearchCredits=0.0, hunterVerificationCredits=0.5]
+08:56:49.197 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=NOT_FOUND, source=null, verification=null, apolloCredits=0, hunterSearchCredits=0.0, hunterVerificationCredits=0.0]
+08:56:49.198 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=NOT_FOUND, source=null, verification=null, apolloCredits=0, hunterSearchCredits=0.0, hunterVerificationCredits=0.0]
+08:56:49.199 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=OPTED_OUT, source=HUNTER, verification=null, apolloCredits=0, hunterSearchCredits=0.0, hunterVerificationCredits=0.0]
+08:56:49.199 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=OPTED_OUT, source=APOLLO, verification=null, apolloCredits=1, hunterSearchCredits=0.0, hunterVerificationCredits=0.0]
+08:56:49.200 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=NOT_FOUND, source=null, verification=null, apolloCredits=0, hunterSearchCredits=0.0, hunterVerificationCredits=0.0]
+08:56:49.201 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.EmailDiscoveryServiceImpl -- Correo de contacto: EmailDiscoveryResult[outcome=FOUND, source=HUNTER, verification=valid, apolloCredits=0, hunterSearchCredits=1.0, hunterVerificationCredits=0.0]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.sending.service.impl.SendGuardServiceImplTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:50.664Z" hostname="DESKTOP-4TARBHR" time="0.012">
+  <properties/>
+  <testcase name="laSupresionSeDelegaAlServicio()" classname="co.com.gtc.prospeccion.sending.service.impl.SendGuardServiceImplTest" time="0.001"/>
+  <testcase name="elDiaSeCuentaEnHoraDeColombia()" classname="co.com.gtc.prospeccion.sending.service.impl.SendGuardServiceImplTest" time="0.0"/>
+  <testcase name="cupoDiarioCuentaSoloLosEnviadosYConCeroEstaPausado()" classname="co.com.gtc.prospeccion.sending.service.impl.SendGuardServiceImplTest" time="0.0"/>
+  <testcase name="laVistaPreviaTieneTope()" classname="co.com.gtc.prospeccion.sending.service.impl.SendGuardServiceImplTest" time="0.005"/>
+  <testcase name="elSiguienteTurnoSeDevuelveEnUtc()" classname="co.com.gtc.prospeccion.sending.service.impl.SendGuardServiceImplTest" time="0.001"/>
+  <testcase name="sinLimitesEnLaConfiguracionUsaLosDeArranque()" classname="co.com.gtc.prospeccion.sending.service.impl.SendGuardServiceImplTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

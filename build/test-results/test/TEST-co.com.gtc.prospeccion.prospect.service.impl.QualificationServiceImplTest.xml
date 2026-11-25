@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImplTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-11-25T13:56:49.280Z" hostname="DESKTOP-4TARBHR" time="0.064">
+  <properties/>
+  <testcase name="sinPersonasNoConsultaNada()" classname="co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImplTest" time="0.033"/>
+  <testcase name="sinPerfilDeInteresNoLlamaAGemini()" classname="co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImplTest" time="0.003"/>
+  <testcase name="lasFallasDeCuotaOLlaveDetienenLaCalificacion()" classname="co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImplTest" time="0.002"/>
+  <testcase name="sinUmbralConfiguradoUsaSesenta()" classname="co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImplTest" time="0.002"/>
+  <testcase name="laPruebaSinPerfilPropioUsaElVigente()" classname="co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImplTest" time="0.004"/>
+  <testcase name="laPruebaConUnPerfilQueNoEsJsonSeRechaza()" classname="co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImplTest" time="0.001"/>
+  <testcase name="enviaLotesDeDiezYDevuelveUnResultadoPorPersonaEnOrden()" classname="co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImplTest" time="0.003"/>
+  <testcase name="siGeminiFallaConUnLoteReintentaUnoPorUnoYMarcaSoloAlQueSigueFallando()" classname="co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImplTest" time="0.002"/>
+  <testcase name="usaElUmbralDeLaConfiguracionVigente()" classname="co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImplTest" time="0.001"/>
+  <testcase name="siGeminiOmiteUnContactoSeLePreguntaSoloPorEse()" classname="co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImplTest" time="0.003"/>
+  <testcase name="laPruebaUsaElPerfilYElUmbralDeLaPeticionSinGuardarNada()" classname="co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImplTest" time="0.002"/>
+  <testcase name="geminiSoloVeCargoEmpresaYFiltrosNuncaNombreNiIds()" classname="co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImplTest" time="0.002"/>
+  <system-out><![CDATA[08:56:49.322 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImpl -- Calificación (configuración 3, umbral 60): 1 contactos, 1 pasan, 0 sin calificar
+08:56:49.326 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImpl -- Calificación (prueba con la configuración vigente, umbral 70): 1 contactos, 0 pasan, 0 sin calificar
+08:56:49.332 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImpl -- Calificación (configuración 3, umbral 70): 25 contactos, 25 pasan, 0 sin calificar
+08:56:49.335 [Test worker] WARN co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImpl -- Gemini no calificó un lote de 3 (InvalidResponse); se reintenta uno por uno
+08:56:49.335 [Test worker] WARN co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImpl -- Gemini no calificó un contacto: Blocked
+08:56:49.335 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImpl -- Calificación (configuración 3, umbral 70): 3 contactos, 2 pasan, 1 sin calificar
+08:56:49.336 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImpl -- Calificación (configuración 3, umbral 70): 1 contactos, 0 pasan, 0 sin calificar
+08:56:49.340 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImpl -- Calificación (configuración 3, umbral 70): 3 contactos, 0 pasan, 0 sin calificar
+08:56:49.342 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImpl -- Calificación (prueba con perfil sin guardar, umbral 60): 1 contactos, 1 pasan, 0 sin calificar
+08:56:49.343 [Test worker] INFO co.com.gtc.prospeccion.prospect.service.impl.QualificationServiceImpl -- Calificación (configuración 3, umbral 70): 1 contactos, 0 pasan, 0 sin calificar
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

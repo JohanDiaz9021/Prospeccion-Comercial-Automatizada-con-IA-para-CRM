@@ -1,0 +1,26 @@
+meta {
+  name: Buscar en Apollo (0 créditos)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/dev/apollo/search
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "Gerente de TI",
+    "location": "Bogota, Colombia",
+    "employeeRange": "51,200",
+    "keywords": null,
+    "page": 1
+  }
+}
+
+docs {
+  Solo perfil local. Búsqueda de personas en Apollo, 10 por página (máximo 5 páginas). No gasta créditos.
+  502 si falta APOLLO_API_KEY.
+}

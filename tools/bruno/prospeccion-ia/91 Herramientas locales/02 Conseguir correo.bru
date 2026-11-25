@@ -1,0 +1,22 @@
+meta {
+  name: Conseguir correo (GASTA CRÉDITOS)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/dev/email-discovery
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "apolloPersonId": "PEGAR_ID_DE_APOLLO"
+  }
+}
+
+docs {
+  Solo perfil local. Tareas 4.1 y 4.2: Apollo Enrichment y, si no alcanza, Hunter. Gasta hasta 1 crédito de Apollo y
+  1,5 de Hunter, con los topes de la 4.2, y lo anota en la_creditledger. 400 lblCreditLimit si se alcanzó un tope.
+}

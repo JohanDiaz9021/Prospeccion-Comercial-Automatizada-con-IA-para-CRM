@@ -1,0 +1,59 @@
+meta {
+  name: Gemini - Respuesta JSON con esquema (datos inventados)
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://generativelanguage.googleapis.com/v1beta/models/{{geminiModel}}:generateContent
+  body: json
+  auth: none
+}
+
+headers {
+  x-goog-api-key: {{geminiApiKey}}
+}
+
+body:json {
+  {
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Extrae ciudad y cargo de: 'gerentes de TI en Bogotá'"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "temperature": 0,
+      "responseMimeType": "application/json",
+      "responseSchema": {
+        "type": "OBJECT",
+        "properties": {
+          "ciudad": {
+            "type": "STRING"
+          },
+          "cargo": {
+            "type": "STRING"
+          }
+        },
+        "required": [
+          "ciudad",
+          "cargo"
+        ]
+      }
+    }
+  }
+}
+
+tests {
+  test("responde 200", function () {
+    expect([200]).to.include(res.getStatus());
+  });
+}
+
+docs {
+  Solo datos inventados: con la capa gratuita, Google puede usar las solicitudes para mejorar sus productos.
+}

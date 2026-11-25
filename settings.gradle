@@ -1,0 +1,10 @@
+pluginManagement {
+    repositories {
+        // Maven Central primero: los plugins de Spring publican sus marcadores allí
+        // y el portal de plugins de Gradle falla a ratos desde algunas redes.
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'msa-prospeccion-crm'
